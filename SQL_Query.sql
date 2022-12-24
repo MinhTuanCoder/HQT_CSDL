@@ -1,5 +1,5 @@
 ﻿create database HTQLBH
-On(Name = HTQLBH_data,
+/*On(Name = HTQLBH_data,
 filename = 'D:\Nam ba\HK1_2\HQTCSDL\BTL\HTQLBH_data.mdf',
 size = 10MB,
 MaxSize =50MB,
@@ -9,7 +9,7 @@ Log on
 Filename = 'D:\Nam ba\HK1_2\HQTCSDL\BTL\HTQLBH_Log.ldf',
 size =5MB,
 Maxsize = 20MB,
-filegrowth = 1MB)
+filegrowth = 1MB)*/
 
 create table tblNhanVien
 (
@@ -25,16 +25,16 @@ create table tblNhanVien
 	fPhuCap float
 )
 insert into tblnhanvien (sMaNV,sTenNV,sGioiTinh,sDiaChi,sDienThoai,dNgaySinh,dNgayVaoLam,fLuongCoBan,fHSL,fPhuCap) values
-						('NV01',N'Nhân Viên Một', N'Nam',N'Hà Nội',		0123457896,'01/12/1998','11/13/2018',3000000,5,1000000),
-						('NV02',N'Nhân Viên Hai', N'Nữ', N'Hải Phòng',	0123978895,'03/05/1999','11/13/2019',2000000,2,1000000),
-						('NV03',N'Nhân Viên Ba',  N'Nam',N'Hà Nội',		0154563565,'04/09/2002','03/05/2020',6000000,4,1000000),
-						('NV04',N'Nhân Viên Bốn', N'Nam',N'Thái Bình',	0123578945,'05/10/1997','09/12/2022',9000000,6,1000000),
-						('NV05',N'Nhân Viên Năm', N'Nam',N'Hòa Bình',	0145647895,'09/12/2003','11/13/2021',4000000,8,1000000),
-						('NV06',N'Nhân Viên Sáu', N'Nữ', N'Thanh Hóa',	0125652156,'10/19/1998','11/13/2020',6000000,1,1000000),
-						('NV07',N'Nhân Viên Bảy', N'Nam',N'Ninh Bình',	0178931295,'12/23/2001','12/23/2019',5000000,7,1000000),
-						('NV08',N'Nhân Viên Tám', N'Nữ', N'Thái Nguyên',0144555890,'02/28/2000','03/05/2019',8000000,6,1000000),
-						('NV09',N'Nhân Viên Chín',N'Nam',N'Hà Nội',		0125656789,'09/17/1999','11/13/2022',3000000,4,1000000),
-						('NV10',N'Nhân Viên Mười',N'Nữ', N'Hà Nội',		0127877899,'10/06/1998','09/17/2019',3000000,3,1000000)
+						('NV01',N'Nhân Viên Một', N'Nam',N'Hà Nội',		'0123457896','01/12/1998','11/13/2018',3000000,5,1000000),
+						('NV02',N'Nhân Viên Hai', N'Nữ', N'Hải Phòng',	'0123978895','03/05/1999','11/13/2018',2000000,2,1000000),
+						('NV03',N'Nhân Viên Ba',  N'Nam',N'Hà Nội',		'0154563565','04/09/2002','03/05/2017',6000000,4,1000000),
+						('NV04',N'Nhân Viên Bốn', N'Nam',N'Thái Bình',	'0123578945','05/10/1997','09/12/2016',9000000,6,1000000),
+						('NV05',N'Nhân Viên Năm', N'Nam',N'Hòa Bình',	'0145647895','09/12/2003','11/13/2016',4000000,8,1000000),
+						('NV06',N'Nhân Viên Sáu', N'Nữ', N'Thanh Hóa',	'0125652156','10/19/1998','11/13/2017',6000000,1,1000000),
+						('NV07',N'Nhân Viên Bảy', N'Nam',N'Ninh Bình',	'0178931295','12/23/2001','12/23/2019',5000000,7,1000000),
+						('NV08',N'Nhân Viên Tám', N'Nữ', N'Thái Nguyên','0144555890','02/28/2000','03/05/2016',8000000,6,1000000),
+						('NV09',N'Nhân Viên Chín',N'Nam',N'Hà Nội',		'0127877899','09/17/1999','11/13/2018',3000000,4,1000000),
+						('NV10',N'Nhân Viên Mười',N'Nữ', N'Hà Nội',		'0127877899','10/06/1998','09/17/2016',3000000,3,1000000)
 
 
 
@@ -48,16 +48,16 @@ create table tblKhachHang
 	sDienThoai varchar(12) not null
 )
 insert into tblKhachHang (	sMaKH,sTenKH,sGioiTinh,sDiaChi,sDienThoai) values 
-						('KH01',N'Khách hàng Một',	N'Nam',	N'Hà Nội',		0123457325),
-						('KH02',N'Khách hàng Hai',	N'Nữ',	N'Hải Phòng',	0123978124),
-						('KH03',N'Khách hàng Ba',	N'Nam',	N'Hà Nội',		0154563437),
-						('KH04',N'Khách hàng Bốn',	N'Nam',	N'Thái Bình',	0123533448),
-						('KH05',N'Khách hàng Năm',	N'Nam',	N'Hòa Bình',	0145643249),
-						('KH06',N'Khách hàng Sáu',	N'Nữ',	N'Thanh Hóa',	0125654392),
-						('KH07',N'Khách hàng Bảy',	N'Nam',	N'Ninh Bình',	0178938765),
-						('KH08',N'Khách hàng Tám',	N'Nữ',	N'Thái Nguyên',	0144553427),
-						('KH09',N'Khách hàng Chín',	N'Nam',	N'Hà Nội',		0125656558),
-						('KH10',N'Khách hàng Mười',	N'Nữ',	N'Hà Nội',		0127877669)
+						('KH01',N'Khách hàng Một',	N'Nam',	N'Hà Nội',		'0123457325'),
+						('KH02',N'Khách hàng Hai',	N'Nữ',	N'Hải Phòng',	'0123978124'),
+						('KH03',N'Khách hàng Ba',	N'Nam',	N'Hà Nội',		'0154563437'),
+						('KH04',N'Khách hàng Bốn',	N'Nam',	N'Thái Bình',	'0123533448'),
+						('KH05',N'Khách hàng Năm',	N'Nam',	N'Hòa Bình',	'0145643249'),
+						('KH06',N'Khách hàng Sáu',	N'Nữ',	N'Thanh Hóa',	'0125654392'),
+						('KH07',N'Khách hàng Bảy',	N'Nam',	N'Ninh Bình',	'0178938765'),
+						('KH08',N'Khách hàng Tám',	N'Nữ',	N'Thái Nguyên',	'0144553427'),
+						('KH09',N'Khách hàng Chín',	N'Nam',	N'Hà Nội',		'0125656558'),
+						('KH10',N'Khách hàng Mười',	N'Nữ',	N'Hà Nội',		'0127877669')
 
 
 create table tblNhaCungCap
@@ -68,11 +68,11 @@ create table tblNhaCungCap
 	sDienThoai varchar(12) not null,
 )
 insert into tblNhaCungCap(sMaNCC,sTenNCC ,sDiaChi,sDienThoai) values
-						('NCC1',N'Nhà Cung Cấp Một',N'Hà Nội',	 012345732), -- cung cap man hinh, chuot
-						('NCC2',N'Nhà Cung Cấp Hai',N'Hải Phòng',012397812), -- cung cap bàn phim, chuot
-						('NCC3',N'Nhà Cung Cấp Ba',	N'Hà Nội',	 015456343), -- cung cap laptop
-						('NCC4',N'Nhà Cung Cấp Bốn',N'Thái Bình',012353344), -- cung cap man hinh ban phim
-						('NCC5',N'Nhà Cung Cấp Năm',N'Hòa Bình', 014564324), -- cung cap ban phim, laptop
+						('NCC1',N'Nhà Cung Cấp Một',N'Hà Nội',	 '012345732'), -- cung cap man hinh, chuot
+						('NCC2',N'Nhà Cung Cấp Hai',N'Hải Phòng','012397812'), -- cung cap bàn phim, chuot
+						('NCC3',N'Nhà Cung Cấp Ba',	N'Hà Nội',	 '015456343'), -- cung cap laptop
+						('NCC4',N'Nhà Cung Cấp Bốn',N'Thái Bình','012353344'), -- cung cap man hinh ban phim
+						('NCC5',N'Nhà Cung Cấp Năm',N'Hòa Bình', '014564324'), -- cung cap ban phim, laptop
 
 
 
@@ -128,7 +128,7 @@ create table tblPhieuNhap
 	foreign key (sMaNV) references tblNhanVien(sMaNV)
 )
 insert into tblPhieuNhap (smapn, sMaNV,dNgayNhap) values
-						('NP1',)
+						('NP1','NV02','01/05/2019')
 
 
 
