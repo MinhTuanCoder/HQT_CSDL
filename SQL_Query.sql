@@ -1,4 +1,4 @@
-﻿create database HTQLBH
+﻿create database QLSieuThiDienMay;
 /*On(Name = HTQLBH_data,
 filename = 'D:\Nam ba\HK1_2\HQTCSDL\BTL\HTQLBH_data.mdf',
 size = 10MB,
@@ -38,7 +38,6 @@ insert into tblnhanvien (sMaNV,sTenNV,sGioiTinh,sDiaChi,sDienThoai,dNgaySinh,dNg
 
 
 
-
 create table tblKhachHang
 (
 	sMaKH Varchar(6) not null primary key,
@@ -59,7 +58,7 @@ insert into tblKhachHang (	sMaKH,sTenKH,sGioiTinh,sDiaChi,sDienThoai) values
 						('KH09',N'Khách hàng Chín',	N'Nam',	N'Hà Nội',		'0125656558'),
 						('KH10',N'Khách hàng Mười',	N'Nữ',	N'Hà Nội',		'0127877669')
 
-
+select *from tblKhachHang
 create table tblNhaCungCap
 (
 	sMaNCC varchar(6) not null primary key,
@@ -72,9 +71,9 @@ insert into tblNhaCungCap(sMaNCC,sTenNCC ,sDiaChi,sDienThoai) values
 						('NCC2',N'Nhà Cung Cấp Hai',N'Hải Phòng','012397812'), -- cung cap bàn phim, chuot
 						('NCC3',N'Nhà Cung Cấp Ba',	N'Hà Nội',	 '015456343'), -- cung cap laptop
 						('NCC4',N'Nhà Cung Cấp Bốn',N'Thái Bình','012353344'), -- cung cap man hinh ban phim
-						('NCC5',N'Nhà Cung Cấp Năm',N'Hòa Bình', '014564324'), -- cung cap ban phim, laptop
+						('NCC5',N'Nhà Cung Cấp Năm',N'Hòa Bình', '014564324') -- cung cap ban phim, laptop
 
-
+select *from tblNhaCungCap
 
 create table tblLoaiHang
 (
@@ -86,7 +85,7 @@ insert into tblLoaiHang(smalh,stenlh) values
 						('LH02',N'Bàn phím'),
 						('LH03',N'Chuột'),
 						('LH04',N'Laptop')
-
+select *from tblLoaiHang
 
 create table  tblMatHang
 (
@@ -95,13 +94,13 @@ create table  tblMatHang
 	sMaNCC varchar(6) not null,
 	sMaLH varchar(6) not null,
 	sDonViTinh Nvarchar(10) not null,
---	iSoluong int,
---	fGiaTien float,
+	iSoluong int,
+	fGiaTien float,
 	foreign key (sMaNCC) references tblnhacungcap(smancc),
 	foreign key (sMaLH) references tblloaihang(smalh)
 )
-insert into tblMatHang (sMaMH,sTenMH,sMaNCC,sMaLH,sDonViTinh/*,isoluong,fGiatien*/) values 
-					/*	('MH01',N'Màn hình 1','NCC1','LH01',N'Chiếc',20,190000),
+insert into tblMatHang (sMaMH,sTenMH,sMaNCC,sMaLH,sDonViTinh,isoluong,fGiatien) values 
+						('MH01',N'Màn hình 1','NCC1','LH01',N'Chiếc',20,190000),
 						('MH02',N'Màn hình 2','NCC1','LH01',N'Chiếc',12,180000),
 						('MH03',N'Màn hình 3','NCC4','LH01',N'Chiếc',20,160000),
 						('MH04',N'Màn hình 4','NCC4','LH01',N'Chiếc',11,180000),
@@ -116,7 +115,7 @@ insert into tblMatHang (sMaMH,sTenMH,sMaNCC,sMaLH,sDonViTinh/*,isoluong,fGiatien
 						('MH13',N'Laptop 1'	 ,'NCC3','LH04',N'Chiếc',40,270000),
 						('MH14',N'Laptop 2'	 ,'NCC3','LH04',N'Chiếc',16,180000),
 						('MH15',N'Laptop 3'	 ,'NCC5','LH04',N'Chiếc',35,350000),
-						('MH16',N'Laptop 4'	 ,'NCC5','LH04',N'Chiếc',31,780000) */
+						('MH16',N'Laptop 4'	 ,'NCC5','LH04',N'Chiếc',31,780000) 
 
 
 
@@ -140,8 +139,8 @@ create table tblChiTietPhieuNhap
 	fGiaNhap float,
 	iSoluongNhap int,
 	primary key (smapn,smamh),
-	foreign key (sMaPN) references tblphieunhap(smapn),
-	foreign key (sMaMH) references tblmathang(smaMH)
+	foreign key (sMaPN) references tblPhieuNhap(smapn),
+	foreign key (sMaMH) references tblMatHang(smaMH)
 )
 insert into tblChiTietPhieuNhap(sMaPN,sMaMH,fGiaNhap,iSoluongNhap) values
 								()
@@ -175,7 +174,7 @@ create table tblChiTietHoaDon
 	fMucGiamGia float,
 	primary key (smahd, smamh),
 	foreign key (sMaHD) references tblHoadon(sMaHD),
-	foreign key (sMaMH) references tblmathang(sMaMH)
+	foreign key (sMaMH) references tblMatHang(smaMH)
 )
 insert into tblChiTietHoaDon(sMaHD,sMaMH,fGiaBan,iSoLuongBan,fMucGiamGia) values 
 							()
