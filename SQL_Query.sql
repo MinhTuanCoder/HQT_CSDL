@@ -129,6 +129,7 @@ create table tblPhieuNhap
 )
 insert into tblPhieuNhap (smapn, sMaNV,dNgayNhap) values
 						('NP1','NV02','01/05/2019')
+						
 
 
 
