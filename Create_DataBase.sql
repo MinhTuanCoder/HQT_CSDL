@@ -49,6 +49,7 @@ create table tblKhachHang
 	sGioiTinh nvarchar(3)  check (sGioiTinh='Nam' or sGioiTinh=N'Nữ' ),
 	sDiaChi nvarchar(50) not null,
 	sDienThoai varchar(12) not null Unique
+	iSoLanMua int;
 )
 select *from tblKhachHang;
 insert into tblKhachHang (sTenKH,sGioiTinh,sDiaChi,sDienThoai) values 
