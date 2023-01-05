@@ -52,3 +52,19 @@ iMaNCC as N'Mã nhà cung cấp', sTenNCC as N'Tên nhà cung cấp' , sDiaChi a
 from tblNhaCungCap 
 where iMaNCC like '%'+@findX+'%' or sTenNCC like '%'+@findX+'%' or sDiaChi like '%'+@findX+'%' or sDiaChi like '%'+@findX+'%'
 order by iMaNCC;
+
+create proc view_all_Category
+as
+select 
+iMaLH as N'Mã loại hàng', sTenLH as N'Tên loại hàng'
+from tblLoaiHang;
+exec view_all_Category;
+
+create proc find_Category
+@findX nvarchar(50)
+as
+select 
+iMaLH as N'Mã loại hàng', sTenLH as N'Tên loại hàng'
+from tblLoaiHang 
+where iMaLH like '%'+@findX+'%' or sTenLH like N'%'+@findX+'%'
+order by iMaLH;

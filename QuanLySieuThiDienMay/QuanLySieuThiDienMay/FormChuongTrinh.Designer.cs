@@ -91,8 +91,41 @@
             this.label12 = new System.Windows.Forms.Label();
             this.dgv_Supplier = new System.Windows.Forms.DataGridView();
             this.tab_product = new System.Windows.Forms.TabPage();
+            this.tb_TimKiem_LH = new System.Windows.Forms.TextBox();
+            this.btn_find_category = new System.Windows.Forms.Button();
+            this.btn_delete_category = new System.Windows.Forms.Button();
+            this.btn_update_category = new System.Windows.Forms.Button();
+            this.btn_add_category = new System.Windows.Forms.Button();
+            this.tb_Ten_LH = new System.Windows.Forms.TextBox();
+            this.tb_Ma_LH = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.dgv_Category = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.dgv_Product = new System.Windows.Forms.DataGridView();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tb_Ma_MH = new System.Windows.Forms.TextBox();
+            this.tb_Ten_MH = new System.Windows.Forms.TextBox();
+            this.tb_DonViTinh = new System.Windows.Forms.TextBox();
+            this.num_GiaTien = new System.Windows.Forms.NumericUpDown();
+            this.num_SoLuong = new System.Windows.Forms.NumericUpDown();
+            this.cbb_Supplier = new System.Windows.Forms.ComboBox();
+            this.cbb_Category = new System.Windows.Forms.ComboBox();
+            this.btn_add_product = new System.Windows.Forms.Button();
+            this.btn_update_product = new System.Windows.Forms.Button();
+            this.btn_delete_product = new System.Windows.Forms.Button();
+            this.btn_find_product = new System.Windows.Forms.Button();
+            this.tb_find_product = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tab_employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_employee)).BeginInit();
@@ -100,6 +133,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_customer)).BeginInit();
             this.tab_supplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Supplier)).BeginInit();
+            this.tab_product.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Category)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_GiaTien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_SoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -110,6 +149,9 @@
             this.tabControl1.Controls.Add(this.tab_product);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -790,22 +832,154 @@
             // 
             // tab_product
             // 
+            this.tab_product.Controls.Add(this.tb_TimKiem_LH);
+            this.tab_product.Controls.Add(this.btn_find_category);
+            this.tab_product.Controls.Add(this.btn_delete_category);
+            this.tab_product.Controls.Add(this.btn_update_category);
+            this.tab_product.Controls.Add(this.btn_add_category);
+            this.tab_product.Controls.Add(this.tb_Ten_LH);
+            this.tab_product.Controls.Add(this.tb_Ma_LH);
+            this.tab_product.Controls.Add(this.label20);
+            this.tab_product.Controls.Add(this.label19);
+            this.tab_product.Controls.Add(this.dgv_Category);
             this.tab_product.Location = new System.Drawing.Point(4, 25);
             this.tab_product.Name = "tab_product";
             this.tab_product.Padding = new System.Windows.Forms.Padding(3);
             this.tab_product.Size = new System.Drawing.Size(1174, 724);
             this.tab_product.TabIndex = 3;
-            this.tab_product.Text = "Mặt hàng";
+            this.tab_product.Text = "Loại hàng";
             this.tab_product.UseVisualStyleBackColor = true;
+            // 
+            // tb_TimKiem_LH
+            // 
+            this.tb_TimKiem_LH.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tb_TimKiem_LH.Location = new System.Drawing.Point(754, 634);
+            this.tb_TimKiem_LH.Name = "tb_TimKiem_LH";
+            this.tb_TimKiem_LH.Size = new System.Drawing.Size(100, 27);
+            this.tb_TimKiem_LH.TabIndex = 9;
+            this.tb_TimKiem_LH.TextChanged += new System.EventHandler(this.btn_find_category_Click);
+            // 
+            // btn_find_category
+            // 
+            this.btn_find_category.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_find_category.Location = new System.Drawing.Point(653, 634);
+            this.btn_find_category.Name = "btn_find_category";
+            this.btn_find_category.Size = new System.Drawing.Size(75, 23);
+            this.btn_find_category.TabIndex = 8;
+            this.btn_find_category.Text = "Tìm kiếm";
+            this.btn_find_category.UseVisualStyleBackColor = true;
+            this.btn_find_category.Click += new System.EventHandler(this.btn_find_category_Click);
+            // 
+            // btn_delete_category
+            // 
+            this.btn_delete_category.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_delete_category.Location = new System.Drawing.Point(520, 634);
+            this.btn_delete_category.Name = "btn_delete_category";
+            this.btn_delete_category.Size = new System.Drawing.Size(75, 23);
+            this.btn_delete_category.TabIndex = 7;
+            this.btn_delete_category.Text = "Xóa";
+            this.btn_delete_category.UseVisualStyleBackColor = true;
+            this.btn_delete_category.Click += new System.EventHandler(this.btn_delete_category_Click);
+            // 
+            // btn_update_category
+            // 
+            this.btn_update_category.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_update_category.Location = new System.Drawing.Point(374, 634);
+            this.btn_update_category.Name = "btn_update_category";
+            this.btn_update_category.Size = new System.Drawing.Size(75, 23);
+            this.btn_update_category.TabIndex = 6;
+            this.btn_update_category.Text = "Sửa";
+            this.btn_update_category.UseVisualStyleBackColor = true;
+            this.btn_update_category.Click += new System.EventHandler(this.btn_update_category_Click);
+            // 
+            // btn_add_category
+            // 
+            this.btn_add_category.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_add_category.Location = new System.Drawing.Point(210, 634);
+            this.btn_add_category.Name = "btn_add_category";
+            this.btn_add_category.Size = new System.Drawing.Size(75, 23);
+            this.btn_add_category.TabIndex = 5;
+            this.btn_add_category.Text = "Thêm";
+            this.btn_add_category.UseVisualStyleBackColor = true;
+            this.btn_add_category.Click += new System.EventHandler(this.btn_add_category_Click);
+            // 
+            // tb_Ten_LH
+            // 
+            this.tb_Ten_LH.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tb_Ten_LH.Location = new System.Drawing.Point(539, 486);
+            this.tb_Ten_LH.Name = "tb_Ten_LH";
+            this.tb_Ten_LH.Size = new System.Drawing.Size(100, 27);
+            this.tb_Ten_LH.TabIndex = 4;
+            // 
+            // tb_Ma_LH
+            // 
+            this.tb_Ma_LH.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.tb_Ma_LH.Location = new System.Drawing.Point(267, 486);
+            this.tb_Ma_LH.Name = "tb_Ma_LH";
+            this.tb_Ma_LH.ReadOnly = true;
+            this.tb_Ma_LH.Size = new System.Drawing.Size(100, 27);
+            this.tb_Ma_LH.TabIndex = 3;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label20.Location = new System.Drawing.Point(430, 489);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(99, 19);
+            this.label20.TabIndex = 2;
+            this.label20.Text = "Tên loại hàng";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label19.Location = new System.Drawing.Point(141, 486);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(101, 19);
+            this.label19.TabIndex = 1;
+            this.label19.Text = "Mã Loại hàng";
+            // 
+            // dgv_Category
+            // 
+            this.dgv_Category.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Category.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Category.Location = new System.Drawing.Point(8, 3);
+            this.dgv_Category.Name = "dgv_Category";
+            this.dgv_Category.RowHeadersWidth = 51;
+            this.dgv_Category.RowTemplate.Height = 24;
+            this.dgv_Category.Size = new System.Drawing.Size(1179, 448);
+            this.dgv_Category.TabIndex = 0;
+            this.dgv_Category.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Category_CellClick);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.tb_find_product);
+            this.tabPage3.Controls.Add(this.btn_find_product);
+            this.tabPage3.Controls.Add(this.btn_delete_product);
+            this.tabPage3.Controls.Add(this.btn_update_product);
+            this.tabPage3.Controls.Add(this.btn_add_product);
+            this.tabPage3.Controls.Add(this.cbb_Category);
+            this.tabPage3.Controls.Add(this.cbb_Supplier);
+            this.tabPage3.Controls.Add(this.num_SoLuong);
+            this.tabPage3.Controls.Add(this.num_GiaTien);
+            this.tabPage3.Controls.Add(this.tb_DonViTinh);
+            this.tabPage3.Controls.Add(this.tb_Ten_MH);
+            this.tabPage3.Controls.Add(this.tb_Ma_MH);
+            this.tabPage3.Controls.Add(this.label27);
+            this.tabPage3.Controls.Add(this.label26);
+            this.tabPage3.Controls.Add(this.label25);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.label22);
+            this.tabPage3.Controls.Add(this.label21);
+            this.tabPage3.Controls.Add(this.dgv_Product);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1174, 724);
             this.tabPage3.TabIndex = 4;
-            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.Text = "Mặt hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage4
@@ -815,8 +989,214 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1174, 724);
             this.tabPage4.TabIndex = 5;
-            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.Text = "Hóa đơn";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1174, 724);
+            this.tabPage1.TabIndex = 6;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1174, 724);
+            this.tabPage2.TabIndex = 7;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1174, 724);
+            this.tabPage5.TabIndex = 8;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // dgv_Product
+            // 
+            this.dgv_Product.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Product.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Product.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgv_Product.Location = new System.Drawing.Point(3, 3);
+            this.dgv_Product.Name = "dgv_Product";
+            this.dgv_Product.RowHeadersWidth = 51;
+            this.dgv_Product.RowTemplate.Height = 24;
+            this.dgv_Product.Size = new System.Drawing.Size(1168, 448);
+            this.dgv_Product.TabIndex = 1;
+            this.dgv_Product.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Product_CellClick);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(43, 494);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(84, 16);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Mã mặt hàng";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(43, 537);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(89, 16);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Tên mặt hàng";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(306, 497);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(90, 16);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "Nhà cung cấp";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(643, 494);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(66, 16);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "Loại hàng";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(60, 601);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(67, 16);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Đơn vị tính";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(336, 601);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(60, 16);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Số lượng";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(336, 537);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(52, 16);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Giá tiền";
+            // 
+            // tb_Ma_MH
+            // 
+            this.tb_Ma_MH.Location = new System.Drawing.Point(144, 494);
+            this.tb_Ma_MH.Name = "tb_Ma_MH";
+            this.tb_Ma_MH.ReadOnly = true;
+            this.tb_Ma_MH.Size = new System.Drawing.Size(102, 22);
+            this.tb_Ma_MH.TabIndex = 9;
+            // 
+            // tb_Ten_MH
+            // 
+            this.tb_Ten_MH.Location = new System.Drawing.Point(144, 537);
+            this.tb_Ten_MH.Name = "tb_Ten_MH";
+            this.tb_Ten_MH.Size = new System.Drawing.Size(102, 22);
+            this.tb_Ten_MH.TabIndex = 10;
+            // 
+            // tb_DonViTinh
+            // 
+            this.tb_DonViTinh.Location = new System.Drawing.Point(144, 601);
+            this.tb_DonViTinh.Name = "tb_DonViTinh";
+            this.tb_DonViTinh.Size = new System.Drawing.Size(102, 22);
+            this.tb_DonViTinh.TabIndex = 11;
+            // 
+            // num_GiaTien
+            // 
+            this.num_GiaTien.DecimalPlaces = 2;
+            this.num_GiaTien.Location = new System.Drawing.Point(412, 535);
+            this.num_GiaTien.Name = "num_GiaTien";
+            this.num_GiaTien.Size = new System.Drawing.Size(79, 22);
+            this.num_GiaTien.TabIndex = 12;
+            // 
+            // num_SoLuong
+            // 
+            this.num_SoLuong.Location = new System.Drawing.Point(412, 599);
+            this.num_SoLuong.Name = "num_SoLuong";
+            this.num_SoLuong.Size = new System.Drawing.Size(80, 22);
+            this.num_SoLuong.TabIndex = 13;
+            // 
+            // cbb_Supplier
+            // 
+            this.cbb_Supplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_Supplier.FormattingEnabled = true;
+            this.cbb_Supplier.Location = new System.Drawing.Point(412, 494);
+            this.cbb_Supplier.Name = "cbb_Supplier";
+            this.cbb_Supplier.Size = new System.Drawing.Size(151, 24);
+            this.cbb_Supplier.TabIndex = 14;
+            // 
+            // cbb_Category
+            // 
+            this.cbb_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_Category.Location = new System.Drawing.Point(726, 491);
+            this.cbb_Category.Name = "cbb_Category";
+            this.cbb_Category.Size = new System.Drawing.Size(121, 24);
+            this.cbb_Category.TabIndex = 15;
+            // 
+            // btn_add_product
+            // 
+            this.btn_add_product.Location = new System.Drawing.Point(191, 662);
+            this.btn_add_product.Name = "btn_add_product";
+            this.btn_add_product.Size = new System.Drawing.Size(97, 37);
+            this.btn_add_product.TabIndex = 16;
+            this.btn_add_product.Text = "Thêm";
+            this.btn_add_product.UseVisualStyleBackColor = true;
+            this.btn_add_product.Click += new System.EventHandler(this.btn_add_product_Click);
+            // 
+            // btn_update_product
+            // 
+            this.btn_update_product.Location = new System.Drawing.Point(339, 662);
+            this.btn_update_product.Name = "btn_update_product";
+            this.btn_update_product.Size = new System.Drawing.Size(98, 37);
+            this.btn_update_product.TabIndex = 17;
+            this.btn_update_product.Text = "Sửa";
+            this.btn_update_product.UseVisualStyleBackColor = true;
+            this.btn_update_product.Click += new System.EventHandler(this.btn_update_product_Click);
+            // 
+            // btn_delete_product
+            // 
+            this.btn_delete_product.Location = new System.Drawing.Point(478, 662);
+            this.btn_delete_product.Name = "btn_delete_product";
+            this.btn_delete_product.Size = new System.Drawing.Size(111, 37);
+            this.btn_delete_product.TabIndex = 18;
+            this.btn_delete_product.Text = "Xóa";
+            this.btn_delete_product.UseVisualStyleBackColor = true;
+            this.btn_delete_product.Click += new System.EventHandler(this.btn_delete_product_Click);
+            // 
+            // btn_find_product
+            // 
+            this.btn_find_product.Location = new System.Drawing.Point(623, 662);
+            this.btn_find_product.Name = "btn_find_product";
+            this.btn_find_product.Size = new System.Drawing.Size(103, 37);
+            this.btn_find_product.TabIndex = 19;
+            this.btn_find_product.Text = "Tìm kiếm";
+            this.btn_find_product.UseVisualStyleBackColor = true;
+            // 
+            // tb_find_product
+            // 
+            this.tb_find_product.Location = new System.Drawing.Point(747, 662);
+            this.tb_find_product.Name = "tb_find_product";
+            this.tb_find_product.Size = new System.Drawing.Size(202, 22);
+            this.tb_find_product.TabIndex = 20;
             // 
             // FormChuongTrinh
             // 
@@ -839,6 +1219,14 @@
             this.tab_supplier.ResumeLayout(false);
             this.tab_supplier.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Supplier)).EndInit();
+            this.tab_product.ResumeLayout(false);
+            this.tab_product.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Category)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_GiaTien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_SoLuong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -910,5 +1298,38 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dgv_Category;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TextBox tb_TimKiem_LH;
+        private System.Windows.Forms.Button btn_find_category;
+        private System.Windows.Forms.Button btn_delete_category;
+        private System.Windows.Forms.Button btn_update_category;
+        private System.Windows.Forms.Button btn_add_category;
+        private System.Windows.Forms.TextBox tb_Ten_LH;
+        private System.Windows.Forms.TextBox tb_Ma_LH;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox tb_find_product;
+        private System.Windows.Forms.Button btn_find_product;
+        private System.Windows.Forms.Button btn_delete_product;
+        private System.Windows.Forms.Button btn_update_product;
+        private System.Windows.Forms.Button btn_add_product;
+        private System.Windows.Forms.ComboBox cbb_Category;
+        private System.Windows.Forms.ComboBox cbb_Supplier;
+        private System.Windows.Forms.NumericUpDown num_SoLuong;
+        private System.Windows.Forms.NumericUpDown num_GiaTien;
+        private System.Windows.Forms.TextBox tb_DonViTinh;
+        private System.Windows.Forms.TextBox tb_Ten_MH;
+        private System.Windows.Forms.TextBox tb_Ma_MH;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.DataGridView dgv_Product;
     }
 }

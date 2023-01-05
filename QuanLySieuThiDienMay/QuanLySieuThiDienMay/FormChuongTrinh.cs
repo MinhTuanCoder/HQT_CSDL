@@ -18,10 +18,12 @@ namespace QuanLySieuThiDienMay
             InitializeComponent();
         }
         int index;
-        DataTable dtEmployee ,dtCustomer,dtSupplier;
+        DataTable dtEmployee ,dtCustomer,dtSupplier,dtCategory, dtProduct;
         SqlDataAdapter daEmployee = new SqlDataAdapter();
         SqlDataAdapter daCustomer = new SqlDataAdapter();
         SqlDataAdapter daSupplier = new SqlDataAdapter();
+        SqlDataAdapter daCategory  =new SqlDataAdapter();
+        SqlDataAdapter daProduct = new SqlDataAdapter();
         public static SqlConnection sqlcon = new SqlConnection(QuanLySieuThiDienMay.Properties.Settings.Default.strConnect);
         
         private void FormChuongTrinh_Load(object sender, EventArgs e)
@@ -43,7 +45,24 @@ namespace QuanLySieuThiDienMay
             dtSupplier = new DataTable();
             daSupplier.Fill(dtSupplier);
             dgv_Supplier.DataSource = dtSupplier;
-
+            //
+            daCategory = new SqlDataAdapter("exec view_all_Category", sqlcon);
+            dtCategory = new DataTable();
+            daCategory.Fill(dtCategory);
+            dgv_Category.DataSource = dtCategory;
+            //
+            daProduct = new SqlDataAdapter("exec view_all_Product", sqlcon);
+            dtProduct = new DataTable();
+            daProduct.Fill(dtProduct);
+            dgv_Product.DataSource = dtProduct;
+            //Load dữ liệu lên combobox nhà cung cấp
+            cbb_Supplier.DataSource = dtSupplier;
+            cbb_Supplier.DisplayMember = "Tên nhà cung cấp";
+            cbb_Supplier.ValueMember = "Mã nhà cung cấp";
+            //Load dữ liệu lên combobox Loại hàng
+            cbb_Category.DataSource = dtCategory;
+            cbb_Category.DisplayMember = "Tên loại hàng";
+            cbb_Category.ValueMember = "Mã loại hàng";
 
         }
 
@@ -155,6 +174,7 @@ namespace QuanLySieuThiDienMay
                     dtEmployee.Rows.Clear();
                     daEmployee.Fill(dtEmployee);
                     dgv_employee.DataSource = dtEmployee;
+                    MessageBox.Show("Đã xóa thành công");
                 }
             }
             catch (Exception ex)
@@ -244,7 +264,8 @@ namespace QuanLySieuThiDienMay
                     cmd.ExecuteNonQuery();
                     dtCustomer.Rows.Clear();
                     daCustomer.Fill(dtCustomer);
-                    dgv_customer.DataSource = dtCustomer; 
+                    dgv_customer.DataSource = dtCustomer;
+                    MessageBox.Show("Đã xóa thành công");
                 }
             }
             catch (Exception ex)
@@ -292,6 +313,7 @@ namespace QuanLySieuThiDienMay
                     dtSupplier.Rows.Clear();
                     daSupplier.Fill(dtSupplier);
                     dgv_Supplier.DataSource = dtSupplier;
+                    MessageBox.Show("Đã xóa thành công");
                 }
             }
             catch (Exception ex)
@@ -300,6 +322,8 @@ namespace QuanLySieuThiDienMay
 
             }
         }
+
+        
 
         private void btn_add_supplier_Click(object sender, EventArgs e)
         {
@@ -317,6 +341,9 @@ namespace QuanLySieuThiDienMay
                 MessageBox.Show(ex.Message);
             }
         }
+
+        
+
         private void btn_update_supplier_Click(object sender, EventArgs e)
         {
             string sql_cmd = "update tblNhaCungCap set sTenNCC = N'" + tb_Ten_NCC
@@ -336,6 +363,9 @@ namespace QuanLySieuThiDienMay
                 MessageBox.Show(ex.Message);
             }
         }
+
+       
+
         private void btn_find_supplier_Click(object sender, EventArgs e)
         {
             string findX = tb_TimKiem_NCC.Text;
@@ -346,7 +376,184 @@ namespace QuanLySieuThiDienMay
             daSupplier.Fill(dtSupplier);
             dgv_Supplier.DataSource = dtSupplier;
         }
+
+        
+
+
+
         //==========================Loại hàng ================
+        private void dgv_Category_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
+            try
+            {
+
+                tb_Ma_LH.Text = dgv_Category.Rows[index].Cells[0].Value.ToString();
+                tb_Ten_LH.Text = dgv_Category.Rows[index].Cells[1].Value.ToString();
+                
+            }
+            catch { }
+        }
+
+        
+
+        private void btn_add_category_Click(object sender, EventArgs e)
+        {
+            string cmd_Insert = "insert into tblLoaiHang values(N'" + tb_Ten_LH.Text + "')";
+            SqlCommand cmd = new SqlCommand(cmd_Insert, sqlcon);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                dtCategory.Rows.Clear();
+                daCategory.Fill(dtCategory);
+                dgv_Category.DataSource = dtCategory;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
+
+        private void btn_update_category_Click(object sender, EventArgs e)
+        {
+            string sql_cmd = "update tblLoaiHang set sTenLH = N'" + tb_Ten_LH.Text+
+              "' where iMaLH = " + tb_Ma_LH.Text;
+
+            SqlCommand cmd = new SqlCommand(sql_cmd, sqlcon);
+            try
+            {
+
+                cmd.ExecuteNonQuery();
+                dtCategory.Rows.Clear();
+                daCategory.Fill(dtCategory);
+                dgv_Category.DataSource = dtCategory;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        
+
+        private void btn_find_category_Click(object sender, EventArgs e)
+        {
+            string findX = tb_TimKiem_LH.Text;
+            string sql_efind = "";
+            sql_efind = "exec find_Category '" + findX + "'";
+            daCategory = new SqlDataAdapter(sql_efind, sqlcon);
+            dtCategory.Rows.Clear();
+            daCategory.Fill(dtCategory);
+            dgv_Category.DataSource = dtCategory;
+        }
+
+        private void btn_delete_category_Click(object sender, EventArgs e)
+        {
+            string sql_cmd = "delete from tblLoaiHang where iMaLH = " + tb_Ma_LH.Text;
+            SqlCommand cmd = new SqlCommand(sql_cmd, sqlcon);
+            try
+            {
+                if (MessageBox.Show("Bạn có chắc muốn xóa Mặt hàng có mã " + tb_Ma_LH.Text, "Nhắc nhở", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+
+                    cmd.ExecuteNonQuery();
+                    dtCategory.Rows.Clear();
+                    daCategory.Fill(dtCategory);
+                    dgv_Category.DataSource = dtCategory;
+                    MessageBox.Show("Đã xóa thành công");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+
+        //++++++++++++++++++Mặt hàng+++++++++++++++++++++
+        private void dgv_Product_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
+            try
+            {
+                
+                tb_Ma_MH.Text = dgv_Product.Rows[index].Cells[0].Value.ToString();
+                tb_Ten_MH.Text = dgv_Product.Rows[index].Cells[1].Value.ToString();
+                num_GiaTien.Text = dgv_Product.Rows[index].Cells[6].Value.ToString();
+                num_SoLuong.Text = dgv_Product.Rows[index].Cells[5].Value.ToString();
+                tb_DonViTinh.Text = dgv_Product.Rows[index].Cells[4].Value.ToString();
+
+                cbb_Supplier.SelectedValue = Int32.Parse(dgv_Product.Rows[index].Cells[2].Value.ToString());
+                cbb_Category.SelectedValue = Int32.Parse(dgv_Product.Rows[index].Cells[3].Value.ToString());
+
+            }
+            catch { }
+        }
+
+        private void btn_add_product_Click(object sender, EventArgs e)
+        {
+            string cmd_Insert = "insert into tblMatHang values(N'" + tb_Ten_MH.Text +"',"+cbb_Supplier.SelectedValue.ToString()+","+cbb_Category.SelectedValue.ToString()+",N'"+ tb_DonViTinh.Text+"',"+num_SoLuong.Value.ToString()+","+num_GiaTien.Value.ToString()+")";
+            SqlCommand cmd = new SqlCommand(cmd_Insert, sqlcon);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                dtProduct.Rows.Clear();
+                daProduct.Fill(dtProduct);
+                dgv_Product.DataSource = dtProduct;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void btn_update_product_Click(object sender, EventArgs e)
+        {
+            string sql_cmd = "update tblMatHang set sTenMh = N'" + tb_Ten_MH.Text +
+                "',imancc = "+cbb_Supplier.SelectedValue.ToString()+",imalh="+
+                cbb_Category.SelectedValue.ToString()+",sDonvitinh=N'"+
+                tb_DonViTinh.Text+"',isoluong="+num_SoLuong.Value.ToString()+
+                ",fGiatien="+num_GiaTien.Value.ToString()+" where iMaMH = " + tb_Ma_MH.Text;
+
+            SqlCommand cmd = new SqlCommand(sql_cmd, sqlcon);
+            try
+            {
+                
+                cmd.ExecuteNonQuery();
+                dtProduct.Rows.Clear();
+                daProduct.Fill(dtProduct);
+                dgv_Product.DataSource = dtProduct;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_delete_product_Click(object sender, EventArgs e)
+        {
+            string sql_cmd = "delete from tblMatHang where iMaMH = " + tb_Ma_MH.Text;
+            SqlCommand cmd = new SqlCommand(sql_cmd, sqlcon);
+            try
+            {
+                if (MessageBox.Show("Bạn có chắc muốn xóa Mặt hàng có mã " + tb_Ma_MH.Text, "Nhắc nhở", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    
+                    cmd.ExecuteNonQuery();
+                    dtProduct.Rows.Clear();
+                    daProduct.Fill(dtProduct);
+                    dgv_Product.DataSource = dtProduct;
+                    MessageBox.Show("Đã xóa thành công");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+        }
+
 
 
 
