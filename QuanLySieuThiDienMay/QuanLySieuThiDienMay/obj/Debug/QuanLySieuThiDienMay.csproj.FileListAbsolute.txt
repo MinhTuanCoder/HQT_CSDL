@@ -28,3 +28,6 @@ E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\DataApp\QuanLySieuThiDienMay\QuanLySieuT
 E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\DataApp\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.csproj.CopyComplete
 E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\DataApp\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.exe
 E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\DataApp\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.pdb
+E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.ChiTietHoaDon.resources
+E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.TaoDonHangMoi.resources
+E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.ThemKhachHang.resources

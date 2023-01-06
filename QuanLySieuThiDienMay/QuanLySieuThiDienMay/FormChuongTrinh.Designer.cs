@@ -102,30 +102,40 @@
             this.label19 = new System.Windows.Forms.Label();
             this.dgv_Category = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.dgv_Product = new System.Windows.Forms.DataGridView();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.tb_Ma_MH = new System.Windows.Forms.TextBox();
-            this.tb_Ten_MH = new System.Windows.Forms.TextBox();
-            this.tb_DonViTinh = new System.Windows.Forms.TextBox();
-            this.num_GiaTien = new System.Windows.Forms.NumericUpDown();
-            this.num_SoLuong = new System.Windows.Forms.NumericUpDown();
-            this.cbb_Supplier = new System.Windows.Forms.ComboBox();
-            this.cbb_Category = new System.Windows.Forms.ComboBox();
-            this.btn_add_product = new System.Windows.Forms.Button();
-            this.btn_update_product = new System.Windows.Forms.Button();
-            this.btn_delete_product = new System.Windows.Forms.Button();
-            this.btn_find_product = new System.Windows.Forms.Button();
             this.tb_find_product = new System.Windows.Forms.TextBox();
+            this.btn_find_product = new System.Windows.Forms.Button();
+            this.btn_delete_product = new System.Windows.Forms.Button();
+            this.btn_update_product = new System.Windows.Forms.Button();
+            this.btn_add_product = new System.Windows.Forms.Button();
+            this.cbb_Category = new System.Windows.Forms.ComboBox();
+            this.cbb_Supplier = new System.Windows.Forms.ComboBox();
+            this.num_SoLuong = new System.Windows.Forms.NumericUpDown();
+            this.num_GiaTien = new System.Windows.Forms.NumericUpDown();
+            this.tb_DonViTinh = new System.Windows.Forms.TextBox();
+            this.tb_Ten_MH = new System.Windows.Forms.TextBox();
+            this.tb_Ma_MH = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.dgv_Product = new System.Windows.Forms.DataGridView();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tb_ma_HD = new System.Windows.Forms.TextBox();
+            this.tb_find_bill = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dgv_Bill = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btn_add_bill = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tab_employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_employee)).BeginInit();
@@ -136,9 +146,11 @@
             this.tab_product.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Category)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_GiaTien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_SoLuong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_GiaTien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Bill)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -150,8 +162,6 @@
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -982,45 +992,168 @@
             this.tabPage3.Text = "Mặt hàng";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // tb_find_product
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1174, 724);
-            this.tabPage4.TabIndex = 5;
-            this.tabPage4.Text = "Hóa đơn";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tb_find_product.Location = new System.Drawing.Point(747, 662);
+            this.tb_find_product.Name = "tb_find_product";
+            this.tb_find_product.Size = new System.Drawing.Size(202, 22);
+            this.tb_find_product.TabIndex = 20;
             // 
-            // tabPage1
+            // btn_find_product
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1174, 724);
-            this.tabPage1.TabIndex = 6;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.btn_find_product.Location = new System.Drawing.Point(623, 662);
+            this.btn_find_product.Name = "btn_find_product";
+            this.btn_find_product.Size = new System.Drawing.Size(103, 37);
+            this.btn_find_product.TabIndex = 19;
+            this.btn_find_product.Text = "Tìm kiếm";
+            this.btn_find_product.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // btn_delete_product
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1174, 724);
-            this.tabPage2.TabIndex = 7;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.btn_delete_product.Location = new System.Drawing.Point(478, 662);
+            this.btn_delete_product.Name = "btn_delete_product";
+            this.btn_delete_product.Size = new System.Drawing.Size(111, 37);
+            this.btn_delete_product.TabIndex = 18;
+            this.btn_delete_product.Text = "Xóa";
+            this.btn_delete_product.UseVisualStyleBackColor = true;
+            this.btn_delete_product.Click += new System.EventHandler(this.btn_delete_product_Click);
             // 
-            // tabPage5
+            // btn_update_product
             // 
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1174, 724);
-            this.tabPage5.TabIndex = 8;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            this.btn_update_product.Location = new System.Drawing.Point(339, 662);
+            this.btn_update_product.Name = "btn_update_product";
+            this.btn_update_product.Size = new System.Drawing.Size(98, 37);
+            this.btn_update_product.TabIndex = 17;
+            this.btn_update_product.Text = "Sửa";
+            this.btn_update_product.UseVisualStyleBackColor = true;
+            this.btn_update_product.Click += new System.EventHandler(this.btn_update_product_Click);
+            // 
+            // btn_add_product
+            // 
+            this.btn_add_product.Location = new System.Drawing.Point(191, 662);
+            this.btn_add_product.Name = "btn_add_product";
+            this.btn_add_product.Size = new System.Drawing.Size(97, 37);
+            this.btn_add_product.TabIndex = 16;
+            this.btn_add_product.Text = "Thêm";
+            this.btn_add_product.UseVisualStyleBackColor = true;
+            this.btn_add_product.Click += new System.EventHandler(this.btn_add_product_Click);
+            // 
+            // cbb_Category
+            // 
+            this.cbb_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_Category.Location = new System.Drawing.Point(726, 491);
+            this.cbb_Category.Name = "cbb_Category";
+            this.cbb_Category.Size = new System.Drawing.Size(121, 24);
+            this.cbb_Category.TabIndex = 15;
+            // 
+            // cbb_Supplier
+            // 
+            this.cbb_Supplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbb_Supplier.FormattingEnabled = true;
+            this.cbb_Supplier.Location = new System.Drawing.Point(412, 494);
+            this.cbb_Supplier.Name = "cbb_Supplier";
+            this.cbb_Supplier.Size = new System.Drawing.Size(151, 24);
+            this.cbb_Supplier.TabIndex = 14;
+            // 
+            // num_SoLuong
+            // 
+            this.num_SoLuong.Location = new System.Drawing.Point(412, 599);
+            this.num_SoLuong.Name = "num_SoLuong";
+            this.num_SoLuong.Size = new System.Drawing.Size(80, 22);
+            this.num_SoLuong.TabIndex = 13;
+            // 
+            // num_GiaTien
+            // 
+            this.num_GiaTien.DecimalPlaces = 2;
+            this.num_GiaTien.Location = new System.Drawing.Point(412, 535);
+            this.num_GiaTien.Name = "num_GiaTien";
+            this.num_GiaTien.Size = new System.Drawing.Size(79, 22);
+            this.num_GiaTien.TabIndex = 12;
+            // 
+            // tb_DonViTinh
+            // 
+            this.tb_DonViTinh.Location = new System.Drawing.Point(144, 601);
+            this.tb_DonViTinh.Name = "tb_DonViTinh";
+            this.tb_DonViTinh.Size = new System.Drawing.Size(102, 22);
+            this.tb_DonViTinh.TabIndex = 11;
+            // 
+            // tb_Ten_MH
+            // 
+            this.tb_Ten_MH.Location = new System.Drawing.Point(144, 537);
+            this.tb_Ten_MH.Name = "tb_Ten_MH";
+            this.tb_Ten_MH.Size = new System.Drawing.Size(102, 22);
+            this.tb_Ten_MH.TabIndex = 10;
+            // 
+            // tb_Ma_MH
+            // 
+            this.tb_Ma_MH.Location = new System.Drawing.Point(144, 494);
+            this.tb_Ma_MH.Name = "tb_Ma_MH";
+            this.tb_Ma_MH.ReadOnly = true;
+            this.tb_Ma_MH.Size = new System.Drawing.Size(102, 22);
+            this.tb_Ma_MH.TabIndex = 9;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(336, 537);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(52, 16);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "Giá tiền";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(336, 601);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(60, 16);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "Số lượng";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(60, 601);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(67, 16);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Đơn vị tính";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(643, 494);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(66, 16);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "Loại hàng";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(306, 497);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(90, 16);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "Nhà cung cấp";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(43, 537);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(89, 16);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "Tên mặt hàng";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(43, 494);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(84, 16);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Mã mặt hàng";
             // 
             // dgv_Product
             // 
@@ -1035,168 +1168,150 @@
             this.dgv_Product.TabIndex = 1;
             this.dgv_Product.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Product_CellClick);
             // 
-            // label21
+            // tabPage4
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(43, 494);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(84, 16);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "Mã mặt hàng";
+            this.tabPage4.Controls.Add(this.tb_ma_HD);
+            this.tabPage4.Controls.Add(this.tb_find_bill);
+            this.tabPage4.Controls.Add(this.button7);
+            this.tabPage4.Controls.Add(this.dateTimePicker2);
+            this.tabPage4.Controls.Add(this.dateTimePicker1);
+            this.tabPage4.Controls.Add(this.label30);
+            this.tabPage4.Controls.Add(this.label29);
+            this.tabPage4.Controls.Add(this.label28);
+            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Controls.Add(this.dgv_Bill);
+            this.tabPage4.Controls.Add(this.button5);
+            this.tabPage4.Controls.Add(this.btn_add_bill);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1174, 724);
+            this.tabPage4.TabIndex = 5;
+            this.tabPage4.Text = "Thông tin bán hàng (Hóa đơn)";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label22
+            // tb_ma_HD
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(43, 537);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(89, 16);
-            this.label22.TabIndex = 3;
-            this.label22.Text = "Tên mặt hàng";
+            this.tb_ma_HD.Location = new System.Drawing.Point(407, 128);
+            this.tb_ma_HD.Name = "tb_ma_HD";
+            this.tb_ma_HD.ReadOnly = true;
+            this.tb_ma_HD.Size = new System.Drawing.Size(100, 22);
+            this.tb_ma_HD.TabIndex = 12;
             // 
-            // label23
+            // tb_find_bill
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(306, 497);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(90, 16);
-            this.label23.TabIndex = 4;
-            this.label23.Text = "Nhà cung cấp";
+            this.tb_find_bill.Location = new System.Drawing.Point(844, 125);
+            this.tb_find_bill.Name = "tb_find_bill";
+            this.tb_find_bill.Size = new System.Drawing.Size(100, 22);
+            this.tb_find_bill.TabIndex = 10;
+            this.tb_find_bill.TextChanged += new System.EventHandler(this.tb_ma_HD_TextChanged);
             // 
-            // label24
+            // button7
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(643, 494);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(66, 16);
-            this.label24.TabIndex = 5;
-            this.label24.Text = "Loại hàng";
+            this.button7.Location = new System.Drawing.Point(839, 179);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(105, 22);
+            this.button7.TabIndex = 9;
+            this.button7.Text = "Tìm kiếm";
+            this.button7.UseVisualStyleBackColor = true;
             // 
-            // label25
+            // dateTimePicker2
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(60, 601);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(67, 16);
-            this.label25.TabIndex = 6;
-            this.label25.Text = "Đơn vị tính";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(664, 177);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(133, 22);
+            this.dateTimePicker2.TabIndex = 8;
             // 
-            // label26
+            // dateTimePicker1
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(336, 601);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(60, 16);
-            this.label26.TabIndex = 7;
-            this.label26.Text = "Số lượng";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(407, 177);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(133, 22);
+            this.dateTimePicker1.TabIndex = 7;
             // 
-            // label27
+            // label30
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(336, 537);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(52, 16);
-            this.label27.TabIndex = 8;
-            this.label27.Text = "Giá tiền";
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(580, 177);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(30, 16);
+            this.label30.TabIndex = 6;
+            this.label30.Text = "đến";
             // 
-            // tb_Ma_MH
+            // label29
             // 
-            this.tb_Ma_MH.Location = new System.Drawing.Point(144, 494);
-            this.tb_Ma_MH.Name = "tb_Ma_MH";
-            this.tb_Ma_MH.ReadOnly = true;
-            this.tb_Ma_MH.Size = new System.Drawing.Size(102, 22);
-            this.tb_Ma_MH.TabIndex = 9;
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(264, 177);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(92, 16);
+            this.label29.TabIndex = 5;
+            this.label29.Text = "Ngày hóa đơn";
             // 
-            // tb_Ten_MH
+            // label28
             // 
-            this.tb_Ten_MH.Location = new System.Drawing.Point(144, 537);
-            this.tb_Ten_MH.Name = "tb_Ten_MH";
-            this.tb_Ten_MH.Size = new System.Drawing.Size(102, 22);
-            this.tb_Ten_MH.TabIndex = 10;
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(278, 128);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(78, 16);
+            this.label28.TabIndex = 4;
+            this.label28.Text = "Mã hóa đơn";
             // 
-            // tb_DonViTinh
+            // button6
             // 
-            this.tb_DonViTinh.Location = new System.Drawing.Point(144, 601);
-            this.tb_DonViTinh.Name = "tb_DonViTinh";
-            this.tb_DonViTinh.Size = new System.Drawing.Size(102, 22);
-            this.tb_DonViTinh.TabIndex = 11;
+            this.button6.Location = new System.Drawing.Point(689, 21);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(108, 67);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Chi tiết hóa đơn";
+            this.button6.UseVisualStyleBackColor = true;
             // 
-            // num_GiaTien
+            // dgv_Bill
             // 
-            this.num_GiaTien.DecimalPlaces = 2;
-            this.num_GiaTien.Location = new System.Drawing.Point(412, 535);
-            this.num_GiaTien.Name = "num_GiaTien";
-            this.num_GiaTien.Size = new System.Drawing.Size(79, 22);
-            this.num_GiaTien.TabIndex = 12;
+            this.dgv_Bill.AllowUserToAddRows = false;
+            this.dgv_Bill.AllowUserToDeleteRows = false;
+            this.dgv_Bill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Bill.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_Bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Bill.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_Bill.Location = new System.Drawing.Point(3, 207);
+            this.dgv_Bill.Name = "dgv_Bill";
+            this.dgv_Bill.ReadOnly = true;
+            this.dgv_Bill.RowHeadersWidth = 51;
+            this.dgv_Bill.RowTemplate.Height = 24;
+            this.dgv_Bill.Size = new System.Drawing.Size(1168, 514);
+            this.dgv_Bill.TabIndex = 2;
+            this.dgv_Bill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Bill_CellClick);
             // 
-            // num_SoLuong
+            // button5
             // 
-            this.num_SoLuong.Location = new System.Drawing.Point(412, 599);
-            this.num_SoLuong.Name = "num_SoLuong";
-            this.num_SoLuong.Size = new System.Drawing.Size(80, 22);
-            this.num_SoLuong.TabIndex = 13;
+            this.button5.Location = new System.Drawing.Point(474, 21);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(95, 67);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Xóa đơn hàng";
+            this.button5.UseVisualStyleBackColor = true;
             // 
-            // cbb_Supplier
+            // btn_add_bill
             // 
-            this.cbb_Supplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_Supplier.FormattingEnabled = true;
-            this.cbb_Supplier.Location = new System.Drawing.Point(412, 494);
-            this.cbb_Supplier.Name = "cbb_Supplier";
-            this.cbb_Supplier.Size = new System.Drawing.Size(151, 24);
-            this.cbb_Supplier.TabIndex = 14;
+            this.btn_add_bill.Location = new System.Drawing.Point(266, 21);
+            this.btn_add_bill.Name = "btn_add_bill";
+            this.btn_add_bill.Size = new System.Drawing.Size(105, 67);
+            this.btn_add_bill.TabIndex = 0;
+            this.btn_add_bill.Text = "Tạo hóa đơn mua hàng";
+            this.btn_add_bill.UseVisualStyleBackColor = true;
+            this.btn_add_bill.Click += new System.EventHandler(this.btn_add_bill_Click);
             // 
-            // cbb_Category
+            // tabPage1
             // 
-            this.cbb_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbb_Category.Location = new System.Drawing.Point(726, 491);
-            this.cbb_Category.Name = "cbb_Category";
-            this.cbb_Category.Size = new System.Drawing.Size(121, 24);
-            this.cbb_Category.TabIndex = 15;
-            // 
-            // btn_add_product
-            // 
-            this.btn_add_product.Location = new System.Drawing.Point(191, 662);
-            this.btn_add_product.Name = "btn_add_product";
-            this.btn_add_product.Size = new System.Drawing.Size(97, 37);
-            this.btn_add_product.TabIndex = 16;
-            this.btn_add_product.Text = "Thêm";
-            this.btn_add_product.UseVisualStyleBackColor = true;
-            this.btn_add_product.Click += new System.EventHandler(this.btn_add_product_Click);
-            // 
-            // btn_update_product
-            // 
-            this.btn_update_product.Location = new System.Drawing.Point(339, 662);
-            this.btn_update_product.Name = "btn_update_product";
-            this.btn_update_product.Size = new System.Drawing.Size(98, 37);
-            this.btn_update_product.TabIndex = 17;
-            this.btn_update_product.Text = "Sửa";
-            this.btn_update_product.UseVisualStyleBackColor = true;
-            this.btn_update_product.Click += new System.EventHandler(this.btn_update_product_Click);
-            // 
-            // btn_delete_product
-            // 
-            this.btn_delete_product.Location = new System.Drawing.Point(478, 662);
-            this.btn_delete_product.Name = "btn_delete_product";
-            this.btn_delete_product.Size = new System.Drawing.Size(111, 37);
-            this.btn_delete_product.TabIndex = 18;
-            this.btn_delete_product.Text = "Xóa";
-            this.btn_delete_product.UseVisualStyleBackColor = true;
-            this.btn_delete_product.Click += new System.EventHandler(this.btn_delete_product_Click);
-            // 
-            // btn_find_product
-            // 
-            this.btn_find_product.Location = new System.Drawing.Point(623, 662);
-            this.btn_find_product.Name = "btn_find_product";
-            this.btn_find_product.Size = new System.Drawing.Size(103, 37);
-            this.btn_find_product.TabIndex = 19;
-            this.btn_find_product.Text = "Tìm kiếm";
-            this.btn_find_product.UseVisualStyleBackColor = true;
-            // 
-            // tb_find_product
-            // 
-            this.tb_find_product.Location = new System.Drawing.Point(747, 662);
-            this.tb_find_product.Name = "tb_find_product";
-            this.tb_find_product.Size = new System.Drawing.Size(202, 22);
-            this.tb_find_product.TabIndex = 20;
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1174, 724);
+            this.tabPage1.TabIndex = 6;
+            this.tabPage1.Text = "Thông tin nhập hàng(Phiếu nhập)";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // FormChuongTrinh
             // 
@@ -1224,9 +1339,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Category)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_GiaTien)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_SoLuong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_GiaTien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Bill)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1300,8 +1418,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dgv_Category;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.TextBox tb_TimKiem_LH;
         private System.Windows.Forms.Button btn_find_category;
         private System.Windows.Forms.Button btn_delete_category;
@@ -1331,5 +1447,17 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DataGridView dgv_Product;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_add_bill;
+        private System.Windows.Forms.DataGridView dgv_Bill;
+        private System.Windows.Forms.TextBox tb_find_bill;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox tb_ma_HD;
     }
 }

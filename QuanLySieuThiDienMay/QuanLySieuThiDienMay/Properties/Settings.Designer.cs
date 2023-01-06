@@ -34,5 +34,17 @@ namespace QuanLySieuThiDienMay.Properties {
                 this["strConnect"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string mahd {
+            get {
+                return ((string)(this["mahd"]));
+            }
+            set {
+                this["mahd"] = value;
+            }
+        }
     }
 }

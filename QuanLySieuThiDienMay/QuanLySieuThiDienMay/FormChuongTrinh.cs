@@ -18,12 +18,13 @@ namespace QuanLySieuThiDienMay
             InitializeComponent();
         }
         int index;
-        DataTable dtEmployee ,dtCustomer,dtSupplier,dtCategory, dtProduct;
+        DataTable dtEmployee ,dtCustomer,dtSupplier,dtCategory, dtProduct,dtBill;
         SqlDataAdapter daEmployee = new SqlDataAdapter();
         SqlDataAdapter daCustomer = new SqlDataAdapter();
         SqlDataAdapter daSupplier = new SqlDataAdapter();
         SqlDataAdapter daCategory  =new SqlDataAdapter();
         SqlDataAdapter daProduct = new SqlDataAdapter();
+        SqlDataAdapter daBill = new SqlDataAdapter();
         public static SqlConnection sqlcon = new SqlConnection(QuanLySieuThiDienMay.Properties.Settings.Default.strConnect);
         
         private void FormChuongTrinh_Load(object sender, EventArgs e)
@@ -63,7 +64,13 @@ namespace QuanLySieuThiDienMay
             cbb_Category.DataSource = dtCategory;
             cbb_Category.DisplayMember = "Tên loại hàng";
             cbb_Category.ValueMember = "Mã loại hàng";
-
+            //
+            //Load dữ liệu về thông tin đơn hàng
+            daBill = new SqlDataAdapter("select *from view_Bill_with_totalMoney", sqlcon);
+            dtBill = new DataTable();
+            daBill.Fill(dtBill);
+            dgv_Bill.DataSource = dtBill;
+            //Load dữ liệu lên combobox nhà cung cấp
         }
 
 
@@ -492,6 +499,8 @@ namespace QuanLySieuThiDienMay
             catch { }
         }
 
+        
+
         private void btn_add_product_Click(object sender, EventArgs e)
         {
             string cmd_Insert = "insert into tblMatHang values(N'" + tb_Ten_MH.Text +"',"+cbb_Supplier.SelectedValue.ToString()+","+cbb_Category.SelectedValue.ToString()+",N'"+ tb_DonViTinh.Text+"',"+num_SoLuong.Value.ToString()+","+num_GiaTien.Value.ToString()+")";
@@ -554,8 +563,32 @@ namespace QuanLySieuThiDienMay
             }
         }
 
+        //++++++++++++++++++ Hóa đơn++++++++++++++
+        private void tb_ma_HD_TextChanged(object sender, EventArgs e)
+        {
+            daBill = new SqlDataAdapter("select *from view_Bill_with_totalMoney where [Mã hóa đơn] like '%" + tb_find_bill.Text + "%'", sqlcon);
+            dtBill = new DataTable();
+            daBill.Fill(dtBill);
+            dgv_Bill.DataSource = dtBill;
+            //Load dữ liệu lên combobox nhà cung cấp
+        }
+
+        private void dgv_Bill_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
+            try
+            { tb_ma_HD.Text = dgv_Bill.Rows[index].Cells[0].Value.ToString(); }
+            catch { }
+        }
 
 
+        private void btn_add_bill_Click(object sender, EventArgs e)
+        {
+            QuanLySieuThiDienMay.Properties.Settings.Default.mahd = tb_ma_HD.Text;
+            TaoDonHangMoi newDonHang = new TaoDonHangMoi();
+            newDonHang.ShowDialog();
+            
+        }
 
     }
 }
