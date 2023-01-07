@@ -517,6 +517,15 @@ namespace QuanLySieuThiDienMay
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_bill_detail_Click(object sender, EventArgs e)
+        {
+            QuanLySieuThiDienMay.Properties.Settings.Default.mahd = tb_ma_HD.Text;
+            ChiTietHoaDon cthd = new ChiTietHoaDon();
+            cthd.ShowDialog();
+            
+        }
+
         private void btn_update_product_Click(object sender, EventArgs e)
         {
             string sql_cmd = "update tblMatHang set sTenMh = N'" + tb_Ten_MH.Text +

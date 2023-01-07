@@ -37,6 +37,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detail_Bill)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +45,7 @@
             // 
             this.dgv_detail_Bill.AllowUserToAddRows = false;
             this.dgv_detail_Bill.AllowUserToDeleteRows = false;
+            this.dgv_detail_Bill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_detail_Bill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_detail_Bill.Location = new System.Drawing.Point(90, 113);
             this.dgv_detail_Bill.Name = "dgv_detail_Bill";
@@ -75,7 +77,7 @@
             this.textBox2.Location = new System.Drawing.Point(447, 21);
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.Size = new System.Drawing.Size(181, 22);
             this.textBox2.TabIndex = 4;
             // 
             // label2
@@ -83,16 +85,16 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(324, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.Size = new System.Drawing.Size(86, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Tên nhân viên";
+            this.label2.Text = "Mã nhân viên";
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(162, 85);
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
+            this.textBox3.Size = new System.Drawing.Size(159, 22);
             this.textBox3.TabIndex = 6;
             // 
             // label3
@@ -121,11 +123,21 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Tổng tiền";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(366, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(117, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Ngày tạo hóa đơn:";
+            // 
             // ChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -137,6 +149,7 @@
             this.Controls.Add(this.dgv_detail_Bill);
             this.Name = "ChiTietHoaDon";
             this.Text = "ChiTietHoaDon";
+            this.Load += new System.EventHandler(this.ChiTietHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detail_Bill)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -154,5 +167,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

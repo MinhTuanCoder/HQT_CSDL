@@ -131,7 +131,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_bill_detail = new System.Windows.Forms.Button();
             this.dgv_Bill = new System.Windows.Forms.DataGridView();
             this.button5 = new System.Windows.Forms.Button();
             this.btn_add_bill = new System.Windows.Forms.Button();
@@ -1178,7 +1178,7 @@
             this.tabPage4.Controls.Add(this.label30);
             this.tabPage4.Controls.Add(this.label29);
             this.tabPage4.Controls.Add(this.label28);
-            this.tabPage4.Controls.Add(this.button6);
+            this.tabPage4.Controls.Add(this.btn_bill_detail);
             this.tabPage4.Controls.Add(this.dgv_Bill);
             this.tabPage4.Controls.Add(this.button5);
             this.tabPage4.Controls.Add(this.btn_add_bill);
@@ -1197,6 +1197,7 @@
             this.tb_ma_HD.ReadOnly = true;
             this.tb_ma_HD.Size = new System.Drawing.Size(100, 22);
             this.tb_ma_HD.TabIndex = 12;
+            this.tb_ma_HD.Text = "00000";
             // 
             // tb_find_bill
             // 
@@ -1258,14 +1259,15 @@
             this.label28.TabIndex = 4;
             this.label28.Text = "Mã hóa đơn";
             // 
-            // button6
+            // btn_bill_detail
             // 
-            this.button6.Location = new System.Drawing.Point(689, 21);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(108, 67);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Chi tiết hóa đơn";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_bill_detail.Location = new System.Drawing.Point(689, 21);
+            this.btn_bill_detail.Name = "btn_bill_detail";
+            this.btn_bill_detail.Size = new System.Drawing.Size(108, 67);
+            this.btn_bill_detail.TabIndex = 3;
+            this.btn_bill_detail.Text = "Chi tiết hóa đơn";
+            this.btn_bill_detail.UseVisualStyleBackColor = true;
+            this.btn_bill_detail.Click += new System.EventHandler(this.btn_bill_detail_Click);
             // 
             // dgv_Bill
             // 
@@ -1457,7 +1459,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_bill_detail;
         private System.Windows.Forms.TextBox tb_ma_HD;
     }
 }
