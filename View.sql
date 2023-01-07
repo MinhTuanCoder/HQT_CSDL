@@ -93,7 +93,6 @@ from tblMatHang, tblChiTietHoaDon
 where tblMatHang.iMaMH = tblChiTietHoaDon.iMaMH
 group by sTenMH 
 go
-
 select * from vw_B410_TbGiaMatHang
 go
 
@@ -196,7 +195,9 @@ go
  inner join tblKhachHang kh on kh.iMaKH=hd.iMaKH
  inner join tblNhanVien nv on nv.iMaNV=hd.iMaNV
  inner join tblMatHang mh on mh.iMaMH =cthd.iMaMH;
- select *from view_all_Bill
+ select *from view_all_Bill where [Mã hóa đơn] 
+ ---view hiển thị chi tiết hóa đơn theo mã hóa đơn
+ select [Tên nhân viên] from view_all_Bill where [Mã hóa đơn]=0000
 
  --view hiển thị hóa đơn kèm tổng tiền của hóa đơn đấy
  create view view_Bill_with_totalMoney
@@ -205,7 +206,7 @@ select tblChiTietHoaDon.iMaHD as [Mã hóa đơn],dNgayBan as [Ngày tạo hóa 
 from tblHoaDon, tblChiTietHoaDon
 where tblHoaDon.iMaHD = tblChiTietHoaDon.iMaHD
 group by tblChiTietHoaDon.iMaHD, dNgayBan;
-
+select *from tblKhachHang;
 select *from view_Bill_with_totalMoney 
 select imaKh as [Mã khách hàng], stenkh+' - '+sDienThoai as [Thông tin] from tblKhachHang;
 select imamh as [Mã mặt hàng],stenmh as [Thông tin] from tblMatHang where iMaLH=1

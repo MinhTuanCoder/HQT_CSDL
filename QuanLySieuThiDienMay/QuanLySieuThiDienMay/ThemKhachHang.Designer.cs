@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.btn_find_customer = new System.Windows.Forms.Button();
-            this.tb_TimKiem_KH = new System.Windows.Forms.TextBox();
+            this.tb_SDT_KH = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.checkNu_KH = new System.Windows.Forms.RadioButton();
             this.checkNam_KH = new System.Windows.Forms.RadioButton();
             this.tb_HoTen_KH = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_DiaChi = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -50,13 +50,13 @@
             this.btn_find_customer.Text = "Tìm kiếm";
             this.btn_find_customer.UseVisualStyleBackColor = true;
             // 
-            // tb_TimKiem_KH
+            // tb_SDT_KH
             // 
-            this.tb_TimKiem_KH.Location = new System.Drawing.Point(200, 88);
-            this.tb_TimKiem_KH.Multiline = true;
-            this.tb_TimKiem_KH.Name = "tb_TimKiem_KH";
-            this.tb_TimKiem_KH.Size = new System.Drawing.Size(118, 30);
-            this.tb_TimKiem_KH.TabIndex = 62;
+            this.tb_SDT_KH.Location = new System.Drawing.Point(200, 135);
+            this.tb_SDT_KH.Multiline = true;
+            this.tb_SDT_KH.Name = "tb_SDT_KH";
+            this.tb_SDT_KH.Size = new System.Drawing.Size(118, 30);
+            this.tb_SDT_KH.TabIndex = 62;
             // 
             // label11
             // 
@@ -96,7 +96,7 @@
             // tb_HoTen_KH
             // 
             this.tb_HoTen_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.tb_HoTen_KH.Location = new System.Drawing.Point(200, 142);
+            this.tb_HoTen_KH.Location = new System.Drawing.Point(200, 81);
             this.tb_HoTen_KH.Name = "tb_HoTen_KH";
             this.tb_HoTen_KH.Size = new System.Drawing.Size(118, 27);
             this.tb_HoTen_KH.TabIndex = 56;
@@ -121,13 +121,13 @@
             this.label17.TabIndex = 54;
             this.label17.Text = "Họ tên";
             // 
-            // textBox1
+            // tb_DiaChi
             // 
-            this.textBox1.Location = new System.Drawing.Point(200, 191);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 112);
-            this.textBox1.TabIndex = 64;
+            this.tb_DiaChi.Location = new System.Drawing.Point(200, 191);
+            this.tb_DiaChi.Multiline = true;
+            this.tb_DiaChi.Name = "tb_DiaChi";
+            this.tb_DiaChi.Size = new System.Drawing.Size(175, 112);
+            this.tb_DiaChi.TabIndex = 64;
             // 
             // button1
             // 
@@ -137,6 +137,7 @@
             this.button1.TabIndex = 65;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -146,6 +147,7 @@
             this.button2.TabIndex = 66;
             this.button2.Text = "Thoát";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // ThemKhachHang
             // 
@@ -154,9 +156,9 @@
             this.ClientSize = new System.Drawing.Size(476, 396);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_DiaChi);
             this.Controls.Add(this.btn_find_customer);
-            this.Controls.Add(this.tb_TimKiem_KH);
+            this.Controls.Add(this.tb_SDT_KH);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.checkNu_KH);
             this.Controls.Add(this.checkNam_KH);
@@ -174,14 +176,14 @@
         #endregion
 
         private System.Windows.Forms.Button btn_find_customer;
-        private System.Windows.Forms.TextBox tb_TimKiem_KH;
+        private System.Windows.Forms.TextBox tb_SDT_KH;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton checkNu_KH;
         private System.Windows.Forms.RadioButton checkNam_KH;
         private System.Windows.Forms.TextBox tb_HoTen_KH;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_DiaChi;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

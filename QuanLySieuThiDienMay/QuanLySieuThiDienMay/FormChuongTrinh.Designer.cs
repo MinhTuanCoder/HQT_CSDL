@@ -133,9 +133,21 @@
             this.label28 = new System.Windows.Forms.Label();
             this.btn_bill_detail = new System.Windows.Forms.Button();
             this.dgv_Bill = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_delete_Bill = new System.Windows.Forms.Button();
             this.btn_add_bill = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tab_employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_employee)).BeginInit();
@@ -151,6 +163,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Product)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Bill)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1170,6 +1184,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button4);
             this.tabPage4.Controls.Add(this.tb_ma_HD);
             this.tabPage4.Controls.Add(this.tb_find_bill);
             this.tabPage4.Controls.Add(this.button7);
@@ -1180,7 +1195,7 @@
             this.tabPage4.Controls.Add(this.label28);
             this.tabPage4.Controls.Add(this.btn_bill_detail);
             this.tabPage4.Controls.Add(this.dgv_Bill);
-            this.tabPage4.Controls.Add(this.button5);
+            this.tabPage4.Controls.Add(this.btn_delete_Bill);
             this.tabPage4.Controls.Add(this.btn_add_bill);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
@@ -1215,6 +1230,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Tìm kiếm";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // dateTimePicker2
             // 
@@ -1286,14 +1302,15 @@
             this.dgv_Bill.TabIndex = 2;
             this.dgv_Bill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Bill_CellClick);
             // 
-            // button5
+            // btn_delete_Bill
             // 
-            this.button5.Location = new System.Drawing.Point(474, 21);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(95, 67);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Xóa đơn hàng";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_delete_Bill.Location = new System.Drawing.Point(474, 21);
+            this.btn_delete_Bill.Name = "btn_delete_Bill";
+            this.btn_delete_Bill.Size = new System.Drawing.Size(95, 67);
+            this.btn_delete_Bill.TabIndex = 1;
+            this.btn_delete_Bill.Text = "Xóa đơn hàng";
+            this.btn_delete_Bill.UseVisualStyleBackColor = true;
+            this.btn_delete_Bill.Click += new System.EventHandler(this.btn_delete_Bill_Click);
             // 
             // btn_add_bill
             // 
@@ -1307,6 +1324,17 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button5);
+            this.tabPage1.Controls.Add(this.button6);
+            this.tabPage1.Controls.Add(this.dateTimePicker3);
+            this.tabPage1.Controls.Add(this.dateTimePicker4);
+            this.tabPage1.Controls.Add(this.label31);
+            this.tabPage1.Controls.Add(this.label32);
+            this.tabPage1.Controls.Add(this.label33);
+            this.tabPage1.Controls.Add(this.button8);
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.button9);
+            this.tabPage1.Controls.Add(this.button10);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -1314,6 +1342,120 @@
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Thông tin nhập hàng(Phiếu nhập)";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(950, 179);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Reset";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(950, 170);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 24;
+            this.button5.Text = "Reset";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(839, 170);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(105, 22);
+            this.button6.TabIndex = 23;
+            this.button6.Text = "Tìm kiếm";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker3.Location = new System.Drawing.Point(664, 168);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(133, 22);
+            this.dateTimePicker3.TabIndex = 22;
+            // 
+            // dateTimePicker4
+            // 
+            this.dateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker4.Location = new System.Drawing.Point(407, 168);
+            this.dateTimePicker4.Name = "dateTimePicker4";
+            this.dateTimePicker4.Size = new System.Drawing.Size(133, 22);
+            this.dateTimePicker4.TabIndex = 21;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(580, 168);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(30, 16);
+            this.label31.TabIndex = 20;
+            this.label31.Text = "đến";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(264, 168);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(92, 16);
+            this.label32.TabIndex = 19;
+            this.label32.Text = "Ngày hóa đơn";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(278, 119);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(78, 16);
+            this.label33.TabIndex = 18;
+            this.label33.Text = "Mã hóa đơn";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(689, 12);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(108, 67);
+            this.button8.TabIndex = 17;
+            this.button8.Text = "Chi tiết hóa đơn";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 207);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1168, 514);
+            this.dataGridView1.TabIndex = 16;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(474, 12);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(95, 67);
+            this.button9.TabIndex = 15;
+            this.button9.Text = "Xóa đơn hàng";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(266, 12);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(105, 67);
+            this.button10.TabIndex = 14;
+            this.button10.Text = "Tạo phiếu nhập hàng";
+            this.button10.UseVisualStyleBackColor = true;
             // 
             // FormChuongTrinh
             // 
@@ -1347,6 +1489,9 @@
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Bill)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1449,7 +1594,7 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.DataGridView dgv_Product;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_delete_Bill;
         private System.Windows.Forms.Button btn_add_bill;
         private System.Windows.Forms.DataGridView dgv_Bill;
         private System.Windows.Forms.TextBox tb_find_bill;
@@ -1461,5 +1606,17 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button btn_bill_detail;
         private System.Windows.Forms.TextBox tb_ma_HD;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }

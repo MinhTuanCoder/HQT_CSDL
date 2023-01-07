@@ -1,27 +1,6 @@
 ﻿--Trigger
 --PHẦN TRONG BÁO CÁO (Phần trong comment là để test)
---Tạo Trigger để kiểm soát giới tính của Nhân Viên chỉ là 'Nam' hoặc 'Nữ'
-create trigger trg_B61_kiemsoatgt 
-on tblNhanVien 
-for insert
-as begin
- declare @gt as nvarchar(5) 
- select @gt = sGioiTinh from INSERTED 
- if(@gt not in (N'Nam', N'Nữ')) 
-raiserror( N'Bạn đã nhập sai giới tính',16,10) 
-end
 
-select * from tblNhanVien
-go
-/*insert tblNhanVien values
-('NV13',N'Nhân Viên Mười Ba',N'No',N'TP Hồ Chí Minh','0987654313','19951202','20150108',3000000,5,600000)
-Go
-insert tblNhanVien values
-('NV13',N'Nhân Viên Mười Ba',N'Nam',N'TP Hồ Chí Minh','0987654313','19951202','20150108',3000000,5,600000)
-Go
-delete from tblNhanVien
-where sMaNV = 'NV13'
-go*/
 
 --Viết trigger cho bảng tblChiTietHoaDon để sao cho khi sửa tblChitietHoaDon.fGiaBan chỉ chấp nhận giá mới lớn hơn hoặc bằng giá ban đầu
 create trigger tg_B62_KiemTraGiaGV
@@ -96,26 +75,6 @@ select * from tblNhanVien
 go*/
 
 --Tạo trigger không cho phép sửa mã nhân viên
-create trigger trg_B65_Check_MaNV_update_not_allowed
-on tblNhanVien
-for Update
-as
-begin
-	if update(sMaNV)
-	begin
-		raiserror (N'Không thể thay đổi Mã NV',16,10)
-		rollBack transaction --không lưu lại các thay đổi
-	end
-end
-go
-/*--Thử update mã nhân viên
-update tblNhanVien
-set sMaNV = 'NV0001'
-where sTenNV = 'Nhân Viên Một'
-go
---Test xem có thay đổi được mã nhân viên không
-select * from tblNhanVien
-go*/
 
 --Tạo trigger để kiểm tra một loại hàng có tồn tại hay không trước khi thêm một mặt hàng mới
 select * from tblMatHang
@@ -158,19 +117,6 @@ begin
 	where sMaNV = @MaNV
 end
 go
-/*
-select * from tblNhanVien
-select * from tblHoaDon
-go
-insert tblNhanVien values
-('NV67', N'Nguyễn Văn Minh', N'Nam', N'Hà Nội', '0123498765', '19980128', '20170808', 2500000, 3, 450000)
-Go
-insert tblHoaDon values
-('HD67', 'NV67', 'KH03', '20220303')
-go
-delete from tblNhanVien
-where sMaNV = 'NV67'
-go*/
 
 --Thêm cột iSoLanMua (Số lần mua) vào bảng khách hàng not null, mặc định 0. Tạo trigger sao cho mỗi khi thêm một hóa đơn mới thì số lần mua tăng lên tương ứng
 alter table tblKhachHang 
@@ -290,3 +236,19 @@ select sMaMH,iSoLuong
 from tblMatHang
 where sMaMH = 'MH20'
 go*/
+
+select *from tblHoaDon;
+insert into tblHoaDon values (12,1,'12/14/2018')
+select top(1) imahd from tblHoaDon order by iMaHD desc;
+select *from inserted
+
+--Tạo trigger xóa 1 hóa đơn trong bảng hóa đơn (tblHoaDon) sẽ xóa toàn bộ thông tin của hóa đơn đó trong bảng chi tiết hóa đơn
+create trigger trig_delete_Bill
+on tblHoaDon 
+instead of delete 
+as begin tran
+	declare @mahd int;
+	select @mahd = imahd from deleted;
+	delete from tblChiTietHoaDon where imahd = @mahd;
+	delete from tblHoaDon where imahd=@mahd;
+commit tran;

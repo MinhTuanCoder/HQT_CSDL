@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,34 +18,44 @@ namespace QuanLySieuThiDienMay
             InitializeComponent();
         }
 
-        private void dgv_customer_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
-        private void btn_find_customer_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void btn_delete_customer_Click(object sender, EventArgs e)
-        {
+        public static SqlConnection sqlcon = new SqlConnection(QuanLySieuThiDienMay.Properties.Settings.Default.strConnect);
 
-        }
-
-        private void btn_update_customer_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_add_customer_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ThemKhachHang_Load(object sender, EventArgs e)
         {
+            if (sqlcon.State != ConnectionState.Open) sqlcon.Open();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string gioitinh = "Nam";
+                if (checkNu_KH.Checked == true) gioitinh = "Nữ";
+                SqlCommand cmd = new SqlCommand("Insert into tblKhachHang values(N'" + tb_HoTen_KH.Text + "',N'" + gioitinh + "',N'" + tb_DiaChi.Text + "','" + tb_SDT_KH.Text + "',0)", sqlcon);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Đã thêm thành công khách hàng");
+
+                this.Close();
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            this.Close();
         }
     }
 }

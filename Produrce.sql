@@ -428,3 +428,11 @@ go
 
 execute sp_B520_MaHD_TongTien 'HD01';
 go
+
+
+--proc hiển thị thông tin chi tiết của hóa đơn X
+create proc view_Bill_detail_X
+@mahd int
+as
+select [Tên mặt hàng],[Số lượng mua],[Giá bán],[Mức giảm giá], [Thành tiền] from view_all_Bill where [Mã hóa đơn]=@mahd;
+exec view_Bill_detail_X '19';

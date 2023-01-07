@@ -148,7 +148,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_detail_Bill);
             this.Name = "ChiTietHoaDon";
-            this.Text = "ChiTietHoaDon";
+            this.Text = " Chi tiết hóa đơn";
             this.Load += new System.EventHandler(this.ChiTietHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detail_Bill)).EndInit();
             this.ResumeLayout(false);

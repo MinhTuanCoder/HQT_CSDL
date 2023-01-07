@@ -51,9 +51,12 @@ namespace QuanLySieuThiDienMay
         {
             if (radioButton1.Checked == true)
             {
+                
                 ThemKhachHang newCusomer = new ThemKhachHang();
-                this.Hide();
+      
                 newCusomer.ShowDialog();
+                radioButton2.Checked = true;
+                this.TaoDonHangMoi_Load(sender,e);
 
             }
             

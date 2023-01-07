@@ -526,6 +526,33 @@ namespace QuanLySieuThiDienMay
             
         }
 
+        private void btn_delete_Bill_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Bạn có chắc muốn xóa hóa đơn có mã '"+tb_ma_HD.Text+"'","Nhắc nhở",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SqlCommand cmd = new SqlCommand("delete from tblHoaDon where imahd = " + tb_ma_HD.Text, sqlcon);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Đã xóa thành công hóa đơn có mã " + tb_ma_HD.Text + "'");
+                dtBill.Rows.Clear();
+                daBill.Fill(dtBill);
+            }
+                
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter dafindbill = new SqlDataAdapter("select *from view_Bill_with_totalMoney  where [Ngày tạo hóa đơn] >= '" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "' and [Ngày tạo hóa đơn] <= '" + dateTimePicker2.Value.ToString("MM/dd/yyyy") + "'", sqlcon);
+            dtBill.Rows.Clear();
+            dafindbill.Fill(dtBill);
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dtBill.Rows.Clear();
+            daBill.Fill(dtBill);
+        }
+
         private void btn_update_product_Click(object sender, EventArgs e)
         {
             string sql_cmd = "update tblMatHang set sTenMh = N'" + tb_Ten_MH.Text +
