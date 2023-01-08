@@ -252,3 +252,17 @@ as begin tran
 	delete from tblChiTietHoaDon where imahd = @mahd;
 	delete from tblHoaDon where imahd=@mahd;
 commit tran;
+--Tạo trigger xóa 1 phiếu nhập sẽ xóa toàn bộ thông tin trong bảng tblChiTietPhieuNhap
+create trigger trig_delete_Import
+on tblPhieuNhap
+instead of delete 
+as begin tran
+	declare @mapn int;
+	select @mapn = imapn from deleted;
+	delete from tblChiTietPhieuNhap where imapn = @mapn;
+	delete from tblPhieuNhap where imapn = @mapn;
+commit tran;
+
+insert into tblLoaiHang values(N'Tuấn đz');
+insert into tblMatHang values (N'test hàng',1,1,N'cái',0,0);
+select *from tblMatHang

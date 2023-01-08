@@ -42,7 +42,7 @@ namespace QuanLySieuThiDienMay
             string strConnect = "";
             try
             {
-                strConnect = "Server=" + cbb_serverName.Text + ";Database=QuanLySieuThiDienMay;User Id=" + tb_userName.Text + ";Password=" + tb_passWord.Text + ";";
+                strConnect = "Server=" + cbb_serverName.Text + ";Database=Test;User Id=" + tb_userName.Text + ";Password=" + tb_passWord.Text + ";";
                 SqlConnection sqlCon = new SqlConnection(strConnect);
                 sqlCon.Open();
                 if (sqlCon.State == ConnectionState.Open)

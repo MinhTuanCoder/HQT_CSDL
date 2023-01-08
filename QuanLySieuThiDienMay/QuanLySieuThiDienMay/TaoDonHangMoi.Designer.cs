@@ -46,15 +46,14 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label8 = new System.Windows.Forms.Label();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.tb_sum_bill = new System.Windows.Forms.TextBox();
+            this.tb_gia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bill_detail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,9 +91,7 @@
             this.dgv_bill_detail.Size = new System.Drawing.Size(543, 268);
             this.dgv_bill_detail.TabIndex = 2;
             this.dgv_bill_detail.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bill_detail_CellClick);
-            this.dgv_bill_detail.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_bill_detail_CellValueChanged_1);
             this.dgv_bill_detail.CellValueNeeded += new System.Windows.Forms.DataGridViewCellValueEventHandler(this.dgv_bill_detail_CellValueChanged_1);
-            this.dgv_bill_detail.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgv_bill_detail_UserAddedRow);
             // 
             // label1
             // 
@@ -143,6 +140,7 @@
             this.cbb_Product.Name = "cbb_Product";
             this.cbb_Product.Size = new System.Drawing.Size(175, 24);
             this.cbb_Product.TabIndex = 9;
+            this.cbb_Product.SelectedValueChanged += new System.EventHandler(this.cbb_Product_SelectedValueChanged);
             // 
             // cbb_Customer
             // 
@@ -243,13 +241,6 @@
             this.label7.TabIndex = 20;
             this.label7.Text = "Giá bán";
             // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(663, 86);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown2.TabIndex = 21;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -295,17 +286,25 @@
             this.tb_sum_bill.TabIndex = 26;
             this.tb_sum_bill.Text = "0\r\n";
             // 
+            // tb_gia
+            // 
+            this.tb_gia.Location = new System.Drawing.Point(635, 83);
+            this.tb_gia.Name = "tb_gia";
+            this.tb_gia.ReadOnly = true;
+            this.tb_gia.Size = new System.Drawing.Size(100, 22);
+            this.tb_gia.TabIndex = 27;
+            // 
             // TaoDonHangMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 535);
+            this.Controls.Add(this.tb_gia);
             this.Controls.Add(this.tb_sum_bill);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.radioButton2);
@@ -329,7 +328,6 @@
             this.Load += new System.EventHandler(this.TaoDonHangMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_bill_detail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -356,11 +354,11 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox tb_sum_bill;
+        private System.Windows.Forms.TextBox tb_gia;
     }
 }

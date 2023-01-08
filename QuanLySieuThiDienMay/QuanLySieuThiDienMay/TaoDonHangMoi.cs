@@ -35,6 +35,7 @@ namespace QuanLySieuThiDienMay
                 cbb_Product.DataSource = dtProduct;
                 cbb_Product.DisplayMember = "Thông tin";
                 cbb_Product.ValueMember = "Mã mặt hàng";
+                
             }
             catch
             {
@@ -105,7 +106,6 @@ namespace QuanLySieuThiDienMay
             {
                 cbb_Product.SelectedValue = dgv_bill_detail.Rows[index].Cells[0].Value.ToString();
                 numericUpDown1.Value =  Convert.ToInt32(dgv_bill_detail.Rows[index].Cells[2].Value);
-                numericUpDown2.Value = Convert.ToInt32(dgv_bill_detail.Rows[index].Cells[3].Value);
                 numericUpDown3.Value = Convert.ToInt32(dgv_bill_detail.Rows[index].Cells[4].Value);
             }
             catch { }
@@ -138,23 +138,6 @@ namespace QuanLySieuThiDienMay
 
        
 
-        private void dgv_bill_detail_CellValueChanged_1(object sender, DataGridViewCellEventArgs e)
-        {
-            Decimal sum = 0;
-            //Thay đổi tổng tiền
-            for (int i = 0; i < dgv_bill_detail.Columns.Count; i++)
-            {
-                sum += Convert.ToDecimal(dtBill.Rows[i][5].ToString());
-            }
-            tb_sum_bill.Text = "5";
-
-        }
-
-        private void dgv_bill_detail_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        {
-           
-        }
-
         private void dgv_bill_detail_CellValueChanged_1(object sender, DataGridViewCellValueEventArgs e)
         {
             Double sum = 0;
@@ -163,6 +146,21 @@ namespace QuanLySieuThiDienMay
                 sum += Convert.ToDouble(dtBill.Rows[i][5]);
             }
             tb_sum_bill.Text = sum.ToString();
+        }
+
+        private void cbb_Product_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                //Mỗi khi chọn mặt hàng sẽ hiển thị giá bán của mặt hàng đó
+                SqlDataAdapter daGia = new SqlDataAdapter("select fgiatien  from tblMatHang where imamh=" + cbb_Product.SelectedValue.ToString(), sqlcon);
+                DataTable dtGia = new DataTable();
+                daGia.Fill(dtGia);
+                tb_gia.Text = dtGia.Rows[0][0].ToString();
+            }
+            catch { }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -180,7 +178,7 @@ namespace QuanLySieuThiDienMay
             {
                 Double sl, gia, giamgia;
                 sl = Convert.ToInt32(numericUpDown1.Value);
-                gia = Convert.ToDouble(numericUpDown2.Value);
+                gia = Convert.ToDouble(tb_gia.Text);
                 giamgia = Convert.ToDouble(numericUpDown3.Value);
                 dtBill.Rows.Add(cbb_Product.SelectedValue.ToString(),cbb_Product.Text,sl,gia,giamgia,sl*gia*(1-giamgia));
             }
@@ -225,6 +223,7 @@ namespace QuanLySieuThiDienMay
                 cbb_Category.DataSource = dtCategory;
                 cbb_Category.DisplayMember = "Thông tin";
                 cbb_Category.ValueMember = "Mã loại hàng";
+                
                 //
                 dtBill.Columns.Add("Mã mặt hàng");
                 dtBill.Columns.Add("Tên mặt hàng");

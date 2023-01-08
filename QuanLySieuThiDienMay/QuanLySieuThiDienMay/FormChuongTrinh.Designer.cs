@@ -123,6 +123,7 @@
             this.label21 = new System.Windows.Forms.Label();
             this.dgv_Product = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.tb_ma_HD = new System.Windows.Forms.TextBox();
             this.tb_find_bill = new System.Windows.Forms.TextBox();
             this.button7 = new System.Windows.Forms.Button();
@@ -136,7 +137,6 @@
             this.btn_delete_Bill = new System.Windows.Forms.Button();
             this.btn_add_bill = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -144,10 +144,11 @@
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btn_detail_Import = new System.Windows.Forms.Button();
+            this.dgv_Import = new System.Windows.Forms.DataGridView();
+            this.btn_delete_Import = new System.Windows.Forms.Button();
+            this.btn_add_import = new System.Windows.Forms.Button();
+            this.tb_ma_pn = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tab_employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_employee)).BeginInit();
@@ -164,7 +165,7 @@
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Bill)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Import)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1205,6 +1206,16 @@
             this.tabPage4.Text = "Thông tin bán hàng (Hóa đơn)";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(950, 179);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "Reset";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // tb_ma_HD
             // 
             this.tb_ma_HD.Location = new System.Drawing.Point(407, 128);
@@ -1324,6 +1335,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.tb_ma_pn);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.dateTimePicker3);
@@ -1331,10 +1343,10 @@
             this.tabPage1.Controls.Add(this.label31);
             this.tabPage1.Controls.Add(this.label32);
             this.tabPage1.Controls.Add(this.label33);
-            this.tabPage1.Controls.Add(this.button8);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.button9);
-            this.tabPage1.Controls.Add(this.button10);
+            this.tabPage1.Controls.Add(this.btn_detail_Import);
+            this.tabPage1.Controls.Add(this.dgv_Import);
+            this.tabPage1.Controls.Add(this.btn_delete_Import);
+            this.tabPage1.Controls.Add(this.btn_add_import);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -1342,16 +1354,6 @@
             this.tabPage1.TabIndex = 6;
             this.tabPage1.Text = "Thông tin nhập hàng(Phiếu nhập)";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(950, 179);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Reset";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -1361,6 +1363,7 @@
             this.button5.TabIndex = 24;
             this.button5.Text = "Reset";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
@@ -1414,48 +1417,61 @@
             this.label33.TabIndex = 18;
             this.label33.Text = "Mã hóa đơn";
             // 
-            // button8
+            // btn_detail_Import
             // 
-            this.button8.Location = new System.Drawing.Point(689, 12);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(108, 67);
-            this.button8.TabIndex = 17;
-            this.button8.Text = "Chi tiết hóa đơn";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btn_detail_Import.Location = new System.Drawing.Point(689, 12);
+            this.btn_detail_Import.Name = "btn_detail_Import";
+            this.btn_detail_Import.Size = new System.Drawing.Size(108, 67);
+            this.btn_detail_Import.TabIndex = 17;
+            this.btn_detail_Import.Text = "Chi tiết phiếu nhập";
+            this.btn_detail_Import.UseVisualStyleBackColor = true;
+            this.btn_detail_Import.Click += new System.EventHandler(this.btn_detail_Import_Click);
             // 
-            // dataGridView1
+            // dgv_Import
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 207);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1168, 514);
-            this.dataGridView1.TabIndex = 16;
+            this.dgv_Import.AllowUserToAddRows = false;
+            this.dgv_Import.AllowUserToDeleteRows = false;
+            this.dgv_Import.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Import.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgv_Import.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Import.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgv_Import.Location = new System.Drawing.Point(3, 207);
+            this.dgv_Import.Name = "dgv_Import";
+            this.dgv_Import.ReadOnly = true;
+            this.dgv_Import.RowHeadersWidth = 51;
+            this.dgv_Import.RowTemplate.Height = 24;
+            this.dgv_Import.Size = new System.Drawing.Size(1168, 514);
+            this.dgv_Import.TabIndex = 16;
+            this.dgv_Import.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Import_CellClick);
             // 
-            // button9
+            // btn_delete_Import
             // 
-            this.button9.Location = new System.Drawing.Point(474, 12);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(95, 67);
-            this.button9.TabIndex = 15;
-            this.button9.Text = "Xóa đơn hàng";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btn_delete_Import.Location = new System.Drawing.Point(474, 12);
+            this.btn_delete_Import.Name = "btn_delete_Import";
+            this.btn_delete_Import.Size = new System.Drawing.Size(95, 67);
+            this.btn_delete_Import.TabIndex = 15;
+            this.btn_delete_Import.Text = "Xóa phiếu nhập";
+            this.btn_delete_Import.UseVisualStyleBackColor = true;
+            this.btn_delete_Import.Click += new System.EventHandler(this.btn_delete_Import_Click);
             // 
-            // button10
+            // btn_add_import
             // 
-            this.button10.Location = new System.Drawing.Point(266, 12);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(105, 67);
-            this.button10.TabIndex = 14;
-            this.button10.Text = "Tạo phiếu nhập hàng";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btn_add_import.Location = new System.Drawing.Point(266, 12);
+            this.btn_add_import.Name = "btn_add_import";
+            this.btn_add_import.Size = new System.Drawing.Size(105, 67);
+            this.btn_add_import.TabIndex = 14;
+            this.btn_add_import.Text = "Tạo phiếu nhập hàng";
+            this.btn_add_import.UseVisualStyleBackColor = true;
+            this.btn_add_import.Click += new System.EventHandler(this.btn_add_import_Click);
+            // 
+            // tb_ma_pn
+            // 
+            this.tb_ma_pn.Location = new System.Drawing.Point(407, 113);
+            this.tb_ma_pn.Name = "tb_ma_pn";
+            this.tb_ma_pn.ReadOnly = true;
+            this.tb_ma_pn.Size = new System.Drawing.Size(100, 22);
+            this.tb_ma_pn.TabIndex = 25;
+            this.tb_ma_pn.Text = "00000";
             // 
             // FormChuongTrinh
             // 
@@ -1491,7 +1507,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Bill)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Import)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1614,9 +1630,10 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btn_detail_Import;
+        private System.Windows.Forms.DataGridView dgv_Import;
+        private System.Windows.Forms.Button btn_delete_Import;
+        private System.Windows.Forms.Button btn_add_import;
+        private System.Windows.Forms.TextBox tb_ma_pn;
     }
 }

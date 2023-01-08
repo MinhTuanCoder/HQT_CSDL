@@ -18,13 +18,14 @@ namespace QuanLySieuThiDienMay
             InitializeComponent();
         }
         int index;
-        DataTable dtEmployee ,dtCustomer,dtSupplier,dtCategory, dtProduct,dtBill;
+        DataTable dtEmployee ,dtCustomer,dtSupplier,dtCategory, dtProduct,dtBill,dtImport;
         SqlDataAdapter daEmployee = new SqlDataAdapter();
         SqlDataAdapter daCustomer = new SqlDataAdapter();
         SqlDataAdapter daSupplier = new SqlDataAdapter();
         SqlDataAdapter daCategory  =new SqlDataAdapter();
         SqlDataAdapter daProduct = new SqlDataAdapter();
         SqlDataAdapter daBill = new SqlDataAdapter();
+        SqlDataAdapter daImport = new SqlDataAdapter();
         public static SqlConnection sqlcon = new SqlConnection(QuanLySieuThiDienMay.Properties.Settings.Default.strConnect);
         
         private void FormChuongTrinh_Load(object sender, EventArgs e)
@@ -71,6 +72,13 @@ namespace QuanLySieuThiDienMay
             daBill.Fill(dtBill);
             dgv_Bill.DataSource = dtBill;
             //Load dữ liệu lên combobox nhà cung cấp
+
+            //Load dữ liệu về thông tin nhập hàng
+            daImport = new SqlDataAdapter("select *from view_all_Import_with_totalMoney", sqlcon);
+            dtImport = new DataTable();
+            daImport.Fill(dtImport);
+            dgv_Import.DataSource = dtImport;
+
         }
 
 
@@ -133,7 +141,7 @@ namespace QuanLySieuThiDienMay
             string gioiTinh = "Nam";
             if (checkNam.Checked == false)
                 gioiTinh = "Nữ";
-            string cmd_Insert = "insert into tblNhanVien values(N'" + tb_HoTen.Text + "'," + "N'" + gioiTinh + "',N'" + tb_DiaChi.Text + "', '" + tb_SDT_NV.Text + "','" + birthDay.Value.Date.ToString("MM/dd/yyyy") + "', '" + startwork.Value.Date.ToString("MM/dd/yyyy") + "'," + tb_LuongCoBan.Text + "," + tb_HSL.Text + "," + tb_PhuCap.Text + ")";
+            string cmd_Insert = "insert into tblNhanVien values(N'" + tb_HoTen.Text + "'," + "N'" + gioiTinh + "',N'" + tb_DiaChi.Text + "', '" + tb_SDT_NV.Text + "','" + birthDay.Value.Date.ToString("MM/dd/yyyy") + "', '" + startwork.Value.Date.ToString("MM/dd/yyyy") + "'," + tb_LuongCoBan.Text + "," + tb_HSL.Text + "," + tb_PhuCap.Text + ",1)";
             SqlCommand cmd = new SqlCommand(cmd_Insert, sqlcon);
             try
             {
@@ -224,7 +232,7 @@ namespace QuanLySieuThiDienMay
             string gioiTinh = "Nam";
             if (checkNam.Checked == false)
                 gioiTinh = "Nữ";
-            string cmd_Insert = "insert into tblKhachHang values(N'" + tb_HoTen_KH.Text + "'," + "N'" + gioiTinh + "',N'" + tb_DiaChi_KH.Text + "', '" + tb_SDT_KH.Text + "',Null)";
+            string cmd_Insert = "insert into tblKhachHang values(N'" + tb_HoTen_KH.Text + "'," + "N'" + gioiTinh + "',N'" + tb_DiaChi_KH.Text + "', '" + tb_SDT_KH.Text + "',0)";
             SqlCommand cmd = new SqlCommand(cmd_Insert, sqlcon);
             try
             {
@@ -334,7 +342,7 @@ namespace QuanLySieuThiDienMay
 
         private void btn_add_supplier_Click(object sender, EventArgs e)
         {
-            string cmd_Insert = "insert into tblNhaCungCap values(N'" + tb_Ten_NCC.Text + "'," + "N'"+ tb_DiaChi_NCC.Text + "', '" + tb_SDT_NCC.Text + "')";
+            string cmd_Insert = "insert into tblNhaCungCap values(N'" + tb_Ten_NCC.Text + "'," + "N'"+ tb_DiaChi_NCC.Text + "', '" + tb_SDT_NCC.Text + "',1)";
             SqlCommand cmd = new SqlCommand(cmd_Insert, sqlcon);
             try
             {
@@ -526,32 +534,9 @@ namespace QuanLySieuThiDienMay
             
         }
 
-        private void btn_delete_Bill_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Bạn có chắc muốn xóa hóa đơn có mã '"+tb_ma_HD.Text+"'","Nhắc nhở",MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                SqlCommand cmd = new SqlCommand("delete from tblHoaDon where imahd = " + tb_ma_HD.Text, sqlcon);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Đã xóa thành công hóa đơn có mã " + tb_ma_HD.Text + "'");
-                dtBill.Rows.Clear();
-                daBill.Fill(dtBill);
-            }
-                
-        }
+        
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            SqlDataAdapter dafindbill = new SqlDataAdapter("select *from view_Bill_with_totalMoney  where [Ngày tạo hóa đơn] >= '" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "' and [Ngày tạo hóa đơn] <= '" + dateTimePicker2.Value.ToString("MM/dd/yyyy") + "'", sqlcon);
-            dtBill.Rows.Clear();
-            dafindbill.Fill(dtBill);
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            dtBill.Rows.Clear();
-            daBill.Fill(dtBill);
-        }
+        
 
         private void btn_update_product_Click(object sender, EventArgs e)
         {
@@ -606,8 +591,10 @@ namespace QuanLySieuThiDienMay
             dtBill = new DataTable();
             daBill.Fill(dtBill);
             dgv_Bill.DataSource = dtBill;
-            //Load dữ liệu lên combobox nhà cung cấp
+            
         }
+
+        
 
         private void dgv_Bill_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -617,6 +604,7 @@ namespace QuanLySieuThiDienMay
             catch { }
         }
 
+        
 
         private void btn_add_bill_Click(object sender, EventArgs e)
         {
@@ -625,6 +613,83 @@ namespace QuanLySieuThiDienMay
             newDonHang.ShowDialog();
             
         }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter dafindbill = new SqlDataAdapter("select *from view_Bill_with_totalMoney  where [Ngày tạo hóa đơn] >= '" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "' and [Ngày tạo hóa đơn] <= '" + dateTimePicker2.Value.ToString("MM/dd/yyyy") + "'", sqlcon);
+            dtBill.Rows.Clear();
+            dafindbill.Fill(dtBill);
 
+        }
+
+        
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            dtBill.Rows.Clear();
+            daBill.Fill(dtBill);
+        }
+
+        
+
+        private void btn_delete_Bill_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn xóa hóa đơn có mã '" + tb_ma_HD.Text + "'", "Nhắc nhở", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SqlCommand cmd = new SqlCommand("delete from tblHoaDon where imahd = " + tb_ma_HD.Text, sqlcon);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Đã xóa thành công hóa đơn có mã " + tb_ma_HD.Text + "'");
+                dtBill.Rows.Clear();
+                daBill.Fill(dtBill);
+            }
+
+        }
+
+        //++++++++++++++++++++ Phiếu nhập++++++++++++++++++++++
+        private void dgv_Import_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            index = e.RowIndex;
+            try
+            { 
+                tb_ma_pn.Text = dgv_Import.Rows[index].Cells[0].Value.ToString();
+                QuanLySieuThiDienMay.Properties.Settings.Default.mapn = tb_ma_pn.Text;
+            }
+            catch(Exception ex)
+            { MessageBox.Show(ex.Message); }
+        }
+        private void btn_detail_Import_Click(object sender, EventArgs e)
+        {
+            QuanLySieuThiDienMay.Properties.Settings.Default.mapn = tb_ma_pn.Text;
+            ChiTietPhieuNhap newChiTietPhieuNhap = new ChiTietPhieuNhap();
+            newChiTietPhieuNhap.ShowDialog();
+        }
+        private void btn_add_import_Click(object sender, EventArgs e)
+        {
+            TaoPhieuNhap newPhieuNhap = new TaoPhieuNhap();
+            newPhieuNhap.ShowDialog();
+        }
+
+        
+        private void btn_delete_Import_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có chắc muốn xóa hóa đơn có mã '" + tb_ma_pn.Text + "'", "Nhắc nhở", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                SqlCommand cmd = new SqlCommand("delete from tblPhieuNhap where imapn = " + tb_ma_pn.Text, sqlcon);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Đã xóa thành công hóa đơn có mã " + tb_ma_pn.Text + "'");
+                dtImport.Rows.Clear();
+                daImport.Fill(dtImport);
+            }
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dtImport.Rows.Clear();
+            daImport.Fill(dtImport);
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter dafindImport = new SqlDataAdapter("select *from view_Import  của hiếu  where [Ngày nhập] >= '" + dateTimePicker1.Value.ToString("MM/dd/yyyy") + "' and [Ngày tạo hóa đơn] <= '" + dateTimePicker2.Value.ToString("MM/dd/yyyy") + "'", sqlcon);
+            dtImport.Rows.Clear();
+            dafindImport.Fill(dtImport);
+        }
     }
 }

@@ -24,6 +24,7 @@ create table tblNhanVien
 	fLuongCoBan float,
 	fHSL float,
 	fPhuCap float,
+	bTinhTrang BIT default(1)
 	Unique(sDienThoai)
 );
 select*from tblNhanVien;

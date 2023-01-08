@@ -46,5 +46,17 @@ namespace QuanLySieuThiDienMay.Properties {
                 this["mahd"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string mapn {
+            get {
+                return ((string)(this["mapn"]));
+            }
+            set {
+                this["mapn"] = value;
+            }
+        }
     }
 }

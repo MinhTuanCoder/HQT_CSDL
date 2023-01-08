@@ -187,7 +187,7 @@ go
 
  -------------
 
- create view view_all_Bill -- view nhìn bảng 
+ create view view_all_Bill -- view nhìn bảng Bill
  as
  select hd.iMaHD as [Mã hóa đơn], kh.sTenKH as [Tên khách hàng], nv.sTenNV as [Tên nhân viên], mh.sTenMH as [Tên mặt hàng], cthd.iSoLuongBan as [Số lượng mua],
 	cthd.fGiaBan as [Giá bán], cthd.fMucGiamGia as [Mức giảm giá], cthd.fGiaBan*cthd.iSoLuongBan*(1-cthd.fMucGiamGia) as [Thành tiền]
@@ -208,6 +208,20 @@ where tblHoaDon.iMaHD = tblChiTietHoaDon.iMaHD
 group by tblChiTietHoaDon.iMaHD, dNgayBan;
 select *from tblKhachHang;
 select *from view_Bill_with_totalMoney 
-select imaKh as [Mã khách hàng], stenkh+' - '+sDienThoai as [Thông tin] from tblKhachHang;
-select imamh as [Mã mặt hàng],stenmh as [Thông tin] from tblMatHang where iMaLH=1
-select imalh as [Mã loại hàng], sTenLH as [Thông tin] from tblLoaiHang
+--Tạo view hiển thị toàn bộ thông tin của các phiếu nhập gồm ( [Mã phiếu nhập] ,[Mã nhân viên], [Ngày tạo phiếu nhập], [Tổng số mặt hàng], [Tổng tiền hàng]
+--
+create view view_all_Import
+as
+select pn.imapn as [Mã phiếu nhập] ,  pn.imanv as [Mã nhân viên] ,
+pn.dngaynhap as [Ngày tạo phiếu] , mh.stenmh as [Tên mặt hàng] ,ctpn.fGiaNhap as [Giá nhập], ctpn.isoluongnhap as [Số lượng nhập]
+from tblChiTietPhieuNhap ctpn inner join tblPhieuNhap pn on pn.imapn= ctpn.imapn
+inner join  tblMatHang mh on mh.imamh=ctpn.imamh;
+--
+create view view_all_Import_with_totalMoney
+as
+select [Mã phiếu nhập],[Mã nhân viên],[Ngày tạo phiếu],sum([Số lượng nhập]) as [Tổng số hàng],
+	sum([Giá nhập]*[Số lượng nhập]) as [Tổng tiền hàng]
+ from view_all_Import  group by [Mã phiếu nhập],[Mã nhân viên],[Ngày tạo phiếu];
+ 
+
+
