@@ -183,7 +183,7 @@ namespace QuanLySieuThiDienMay
             SqlCommand cmd = new SqlCommand(sql_cmd, sqlcon);
             try
             {
-                if (MessageBox.Show("Bạn có chắc muốn xóa Nhân viên có mã " + tb_maKH.Text, "Nhắc nhở", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Bạn có chắc muốn xóa Nhân viên có mã " + tb_MaNV.Text, "Nhắc nhở", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     cmd.ExecuteNonQuery();
                     dtEmployee.Rows.Clear();
@@ -322,7 +322,7 @@ namespace QuanLySieuThiDienMay
             SqlCommand cmd = new SqlCommand(sql_cmd, sqlcon);
             try
             {
-                if (MessageBox.Show("Bạn có chắc muốn xóa Khách hàng có mã " + tb_Ma_NCC.Text, "Nhắc nhở", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show("Bạn có chắc muốn xóa Nhà cung cấp có mã " + tb_Ma_NCC.Text, "Nhắc nhở", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     cmd.ExecuteNonQuery();
                     dtSupplier.Rows.Clear();
@@ -642,6 +642,17 @@ namespace QuanLySieuThiDienMay
                 daBill.Fill(dtBill);
             }
 
+        }
+
+        private void tb_find_product_TextChanged(object sender, EventArgs e)
+        {
+            string findX = tb_find_product.Text;
+            string sql_efind = "";
+            sql_efind = "exec find_product '" + findX + "'";
+            daProduct = new SqlDataAdapter(sql_efind, sqlcon);
+            dtProduct.Rows.Clear();
+            daProduct.Fill(dtProduct);
+            dgv_Product.DataSource = dtProduct;
         }
 
         //++++++++++++++++++++ Phiếu nhập++++++++++++++++++++++

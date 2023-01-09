@@ -123,7 +123,7 @@ alter table tblKhachHang
 add iSoLanMua int not null default (0.0)
 go
 
-create trigger trg_B68_TangSoLanMua
+create trigger trg_TangSoLanMua
 on tblHoaDon
 after insert
 as
@@ -136,7 +136,7 @@ begin
 	select @iSoLanMua = count(sMaKH) from tblHoaDon where @sMaHD = sMaHD
 	update tblKhachHang
 		set tblKhachHang.iSoLanMua += @iSoLanMua where @sMaKH = sMaKH
-end
+end;
 go
 
 select * from tblKhachHang
@@ -150,7 +150,7 @@ insert into tblHoaDon values
 go*/
  
 --Tạo trigger sao cho mỗi khi bán đi một mặt hàng nào đó thì số lượng trong kho giảm đi tương ứng
-create trigger trg_B69_GiamSoLuongMH
+create trigger trg_GiamSoLuongMH
 on tblChiTietHoaDon
 after insert
 as
@@ -162,7 +162,7 @@ begin
 	select @iSoLuongBan = iSoLuongBan from tblChiTietHoaDon
 	update tblMatHang
 		set iSoLuong -= @iSoLuongBan where @sMaMH = sMaMH
-end
+end;
 go
 /*--Xem đơn hàng số 68
 select * from tblHoaDon
@@ -191,7 +191,7 @@ insert into tblChiTietHoaDon values
 go*/
 
 --Tạo trigger sao cho khi nhập thêm một mặt hàng nào đó thì số lượng mặt hàng đó trong kho tăng lên
-create trigger trg_B610_TangSoLuongMatHang
+create trigger trg_TangSoLuongMatHang
 on tblChiTietPhieuNhap
 after insert
 as
@@ -203,7 +203,7 @@ begin
 	select @iSoLuongNhap = iSoLuongNhap from tblChiTietPhieuNhap
 	update tblMatHang
 		set iSoLuong += @iSoLuongNhap where @sMaMH = sMaMH
-end
+end;
 go
 /*--Xem bảng mặt hàng - MH20 - Màn hình 10 - iSoLuong
 select * from tblMatHang

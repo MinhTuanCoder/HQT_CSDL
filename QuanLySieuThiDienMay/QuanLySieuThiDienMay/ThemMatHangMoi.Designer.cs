@@ -74,8 +74,12 @@
             // 
             // num_GiaTien
             // 
-            this.num_GiaTien.DecimalPlaces = 2;
             this.num_GiaTien.Location = new System.Drawing.Point(444, 136);
+            this.num_GiaTien.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
             this.num_GiaTien.Name = "num_GiaTien";
             this.num_GiaTien.Size = new System.Drawing.Size(79, 22);
             this.num_GiaTien.TabIndex = 24;

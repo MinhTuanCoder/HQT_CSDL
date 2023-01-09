@@ -137,6 +137,7 @@
             this.btn_delete_Bill = new System.Windows.Forms.Button();
             this.btn_add_bill = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tb_ma_pn = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -148,7 +149,6 @@
             this.dgv_Import = new System.Windows.Forms.DataGridView();
             this.btn_delete_Import = new System.Windows.Forms.Button();
             this.btn_add_import = new System.Windows.Forms.Button();
-            this.tb_ma_pn = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tab_employee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_employee)).BeginInit();
@@ -1013,6 +1013,7 @@
             this.tb_find_product.Name = "tb_find_product";
             this.tb_find_product.Size = new System.Drawing.Size(202, 22);
             this.tb_find_product.TabIndex = 20;
+            this.tb_find_product.TextChanged += new System.EventHandler(this.tb_find_product_TextChanged);
             // 
             // btn_find_product
             // 
@@ -1022,6 +1023,7 @@
             this.btn_find_product.TabIndex = 19;
             this.btn_find_product.Text = "Tìm kiếm";
             this.btn_find_product.UseVisualStyleBackColor = true;
+            this.btn_find_product.Click += new System.EventHandler(this.tb_find_product_TextChanged);
             // 
             // btn_delete_product
             // 
@@ -1355,6 +1357,15 @@
             this.tabPage1.Text = "Thông tin nhập hàng(Phiếu nhập)";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tb_ma_pn
+            // 
+            this.tb_ma_pn.Location = new System.Drawing.Point(407, 113);
+            this.tb_ma_pn.Name = "tb_ma_pn";
+            this.tb_ma_pn.ReadOnly = true;
+            this.tb_ma_pn.Size = new System.Drawing.Size(100, 22);
+            this.tb_ma_pn.TabIndex = 25;
+            this.tb_ma_pn.Text = "00000";
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(950, 170);
@@ -1463,15 +1474,6 @@
             this.btn_add_import.Text = "Tạo phiếu nhập hàng";
             this.btn_add_import.UseVisualStyleBackColor = true;
             this.btn_add_import.Click += new System.EventHandler(this.btn_add_import_Click);
-            // 
-            // tb_ma_pn
-            // 
-            this.tb_ma_pn.Location = new System.Drawing.Point(407, 113);
-            this.tb_ma_pn.Name = "tb_ma_pn";
-            this.tb_ma_pn.ReadOnly = true;
-            this.tb_ma_pn.Size = new System.Drawing.Size(100, 22);
-            this.tb_ma_pn.TabIndex = 25;
-            this.tb_ma_pn.Text = "00000";
             // 
             // FormChuongTrinh
             // 
