@@ -4,7 +4,6 @@ E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\Qu
 E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\bin\Debug\System.Data.SqlClient.dll
 E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\bin\Debug\System.Data.SqlClient.xml
 E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.csproj.AssemblyReference.cache
-E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.csproj.SuggestedBindingRedirects.cache
 E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.Login.resources
 E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.Properties.Resources.resources
 E:\BE_STUDYING\He_Quan_Tri_CSDL\Project\Project_HQT_CSDL\QuanLySieuThiDienMay\QuanLySieuThiDienMay\obj\Debug\QuanLySieuThiDienMay.csproj.GenerateResource.cache
